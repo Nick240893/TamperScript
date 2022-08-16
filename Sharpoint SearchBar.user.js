@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sharpoint SearchBar
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  try to take over the world!
 // @author       NigroN
 // @include      https://ts.accenture.com/sites/CommandCenter2/wiki/SitePages/Home.aspx
@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 (function() {
-	async function testo(string){
+	async function search(string){
 		var tab = document.getElementById("layoutsTable").getElementsByTagName("a")
 		if (!(input.value == "")) await hide("none")
 		for (var X=0; X<tab.length; X++) {
@@ -28,28 +28,25 @@
 		}
 	}
 
-	function hide(strings){
-		if (!strings) {var strings=""}
+	function hide(state){
+		if (!(state)) {var state=""}
 		var tab = document.getElementById("layoutsTable").getElementsByClassName("ms-rte-layoutszone-inner")[0].childNodes
 		for (var X=0; X<tab.length; X++) {
-            if (tab[X].data && (tab[X].data.includes("\n"))) {continue}
-			tab[X].style.display=strings
+			if (tab[X].data && (tab[X].data.includes("\n"))) {continue}
+			tab[X].style.display=state
 		}
 	}
 
-
-
-
-var x = document.getElementById("layoutsTable").insertRow(0)
-x.id="myRowForSearch"
-var y = x.insertCell(0)
-y.id="myCellForSearch"
-y.style.textAlign="center"
-var input = document.createElement('input');
-input.id="myInputForSearch"
-input.placeholder="Cerca"
-input.oninput = () => {testo(input.value);}
-y.appendChild(input);
-input.focus()
+	var x = document.getElementById("layoutsTable").insertRow(0)
+	x.id="myRowForSearch"
+	var y = x.insertCell(0)
+	y.id="myCellForSearch"
+	y.style.textAlign="center"
+	var input = document.createElement('input');
+	input.id="myInputForSearch"
+	input.placeholder="Cerca"
+	input.oninput = () => {search(input.value);}
+	y.appendChild(input);
+	input.focus()
 
 })();
