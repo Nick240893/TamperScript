@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sharpoint SearchBar
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      2.1
 // @description  try to take over the world!
 // @author       NigroN
 // @include      https://ts.accenture.com/*
@@ -13,17 +13,12 @@
 		var tab = document.getElementById("layoutsTable").getElementsByTagName("a");
 		if (!(input.value == "")) await hide("none");
 		for (var X=0; X<tab.length; X++) {
-			if (!(tab[X].href.toUpperCase().replace(/.*\//gi,"").replace(/\.[A-Z]*$/gi,"").includes(string.toUpperCase())) && !(tab[X].lastChild.alt.toUpperCase().replace(/\.[A-Z]*/g,"").includes(string.toUpperCase()))) {
-				tab[X].style.display="none";
-				var Z=0; var parente=tab[X].parentNode.getElementsByTagName("a");
-				for (var Y=0; Y<parente.length; Y++) {
-					if (parente[Y] && parente[Y].style && parente[Y].style.display && parente[Y].style.display.includes("none")) {Z+=1};
-					if (Z && Z == parente.length) {tab[X].parentNode.style.display="none"};
-				}
-			} else {
+			if ((tab[X].href.toUpperCase().replace(/.*\//gi,"").replace(/\.[A-Z]*$/gi,"").includes(string.toUpperCase())) || (tab[X].lastChild.alt.toUpperCase().replace(/\.[A-Z]*/g,"").includes(string.toUpperCase()))) {
 				tab[X].style.display="";
 				tab[X].parentNode.style.display="";
 				if (input.value == "") {hide()};
+			} else {
+                tab[X].style.display="none";
 			}
 		}
 	};
