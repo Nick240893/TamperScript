@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Sharpoint SearchBar
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      2.0
 // @description  try to take over the world!
 // @author       NigroN
-// @include      https://ts.accenture.com/sites/CommandCenter2/wiki/SitePages/Home.aspx
+// @include      https://ts.accenture.com/*
 // @grant        none
 // ==/UserScript==
 
@@ -37,18 +37,21 @@
 		}
 	};
 
-	var x = document.getElementById("layoutsTable").insertRow(0);
-	x.id="myRowForSearch";
-	var y = x.insertCell(0);
-	y.id="myCellForSearch";
-	y.style.textAlign="center";
-	var input = document.createElement('input');
-	input.id="myInputForSearch";
-	input.placeholder="Cerca";
-	input.oninput = () => {search(input.value)};
-	y.appendChild(input);
-	input.focus();
-	var css = window.document.styleSheets[0];
-	css.insertRule('#myInputForSearch[placeholder] {text-align: center;}', css.cssRules.length);
+	if (window.location.href.includes('sites/CommandCenter2/wiki/SitePages/Home.aspx')) {
+		var x = document.getElementById("layoutsTable").insertRow(0);
+		x.id="myRowForSearch";
+		var y = x.insertCell(0);
+		y.id="myCellForSearch";
+		y.style.textAlign="center";
+		var input = document.createElement('input');
+		input.id="myInputForSearch";
+		input.placeholder="Cerca";
+		input.oninput = () => {search(input.value)};
+		y.appendChild(input);
+		input.focus();
+		var css = window.document.styleSheets[0];
+		css.insertRule('#myInputForSearch[placeholder] {text-align: center;}', css.cssRules.length);
+	}
+    document.title = document.title.replace(/commandcenter - /gi,"");
 
 })();
