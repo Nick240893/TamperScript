@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sharpoint SearchBar
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       NigroN
 // @match        https://ts.accenture.com/sites/CommandCenter2/wiki/SitePages/Home.aspx
@@ -32,7 +32,7 @@
 		if (!strings) {var strings=""}
 		var tab = document.getElementById("layoutsTable").getElementsByClassName("ms-rte-layoutszone-inner")[0].childNodes
 		for (var X=0; X<tab.length; X++) {
-            if (tab[X].data && tab[X].data=="\n") {continue}
+            if (tab[X].data && (tab[X].data.includes("\n"))) {continue}
 			tab[X].style.display=strings
 		}
 	}
