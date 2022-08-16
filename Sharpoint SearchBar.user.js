@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sharpoint SearchBar
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.5
 // @description  try to take over the world!
 // @author       NigroN
 // @include      https://ts.accenture.com/sites/CommandCenter2/wiki/SitePages/Home.aspx
@@ -48,6 +48,7 @@
 	input.oninput = () => {search(input.value)};
 	y.appendChild(input);
 	input.focus();
-	window.document.styleSheets[0].insertRule('#myInputForSearch[placeholder] {text-align: center;}', sheet.cssRules.length);
+	var css = window.document.styleSheets[0];
+	css.insertRule('#myInputForSearch[placeholder] {text-align: center;}', css.cssRules.length);
 
 })();
