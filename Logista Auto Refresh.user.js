@@ -15,7 +15,7 @@
 		for (var X=0; X<el.length; X++) {
 			if (el[X].innerText.includes("Refresh")) {
 				el[X].click();
-                setTimeout(refresh, 10000);
+                setTimeout(refresh, 30000);
 			}
 		}
 	}
