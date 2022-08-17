@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Service-Now Reloader
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  try to take over the world!
 // @author       NigroN
 // @include      https://*.service-now.com/*
@@ -14,7 +14,7 @@
     var time=Math.round(tmp*1000);
      function loop() {
         if (document.visibilityState != "visible") {
-            if ((/home\.do|dashboard\.do/.test(window.location.href))) {
+            if ((/navpage\.do|home\.do|dashboard\.do/.test(window.location.href))) {
                 document.location.reload(true);
             } else {
                 setInterval(loop, time);
