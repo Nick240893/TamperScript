@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clippy
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       NigroN
 // @match        https://ts.accenture.com/*
@@ -12,7 +12,7 @@
 (function() {
     function clippy(text) {
           if (window.tst != undefined) {return} else {window.tst=1};
-          el.value = text.innerText.replace(/\n$/gi,"");;
+          el.value = text.innerText.replace(/\n*$/gi,"");;
           el.select();
           document.execCommand('copy');
           var bkp = (text.style.color === undefined) ? '' : text.style.color;
