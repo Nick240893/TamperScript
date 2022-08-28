@@ -79,8 +79,8 @@
     	if (selection != '') {
     		var range = selection.getRangeAt(0);
     		var spn = document.createElement("span");
-    		aux.appendChild(range.cloneContents());
-    		console.log(edv.innerHTML)
+    		spn.appendChild(range.cloneContents());
+    		console.log(selection.anchorNode.parentElement.innerHTML)
     		//var text = selection.toString();
             //var range = selection.getRangeAt(0);
             //var parent = $(range.startContainer.parentNode);
