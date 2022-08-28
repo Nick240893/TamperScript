@@ -115,8 +115,6 @@
           el.value = text.innerText.replace(/\n*$/gi,"");;
           el.select();
           document.execCommand('copy');
-          el.value='';
-          el.select();
           var bkp = (text.style.color === undefined) ? '' : text.style.color;
           text.style.color = 'red';
           setTimeout(function(){text.style.color = bkp; window.tst=undefined;} ,300)
