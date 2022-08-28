@@ -83,9 +83,9 @@
     		range.deleteContents();
             range.insertNode($('<span class="clippy">' + text + '</span>')[0]);
             $('span.clippy:empty').remove();
-            console.log()
-            parent.innerHTML.replace(/\n/gi, '');
-            document.getElementById('ttttt').value=parent.innerHTML
+            console.log(parent.innerHTML)
+            //parent.innerHTML.replace(/\n/gi, '');
+            //document.getElementById('ttttt').value=parent.innerHTML
             show();
     	}
     }
