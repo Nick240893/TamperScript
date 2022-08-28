@@ -84,6 +84,7 @@
     		range.insertNode(spn); 
     		console.log(range.cloneContents())
     		console.log(selection.anchorNode.parentElement.innerHTML)
+    		window.newTSTA=selection.anchorNode.parentElement
     		//var text = selection.toString();
             //var range = selection.getRangeAt(0);
             //var parent = $(range.startContainer);
@@ -105,7 +106,7 @@
 	
 	function clippyRmv(el) {
 		$(el).replaceWith(el.innerText)
-		console.log(el.parentNode.innerHTML)
+		console.log(newTSTA.innerHTML)
 	}
 	
     //clippy
