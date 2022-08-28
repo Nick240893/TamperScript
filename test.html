@@ -82,8 +82,6 @@
     		spn.classList.add('clippy');
     		spn.appendChild(range.extractContents());
     		range.insertNode(spn); 
-    		window.tsts=selection.anchorNode.parentElement;
-    		console.log(tsts.innerHTML);
 			show();
     	}
     }
@@ -96,7 +94,6 @@
 	
 	function clippyRmv(el) {
 		$(el).contents().unwrap();
-		console.log(tsts.innerHTML);
 	}
 	
     //clippy
