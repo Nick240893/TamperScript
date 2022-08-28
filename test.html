@@ -47,8 +47,8 @@
       }
       document.addEventListener("selectionchange", () => {
       	var tmp=document.getSelection().toString();
-      	
-        (tmp) ? document.getElementById("clippyMgmtAdd") : null
+      	var add=document.getElementById("clippyMgmtAdd") 
+        (tmp) ? add.style.color='' : null
         
       });
       var editMode = "g" //document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable")
