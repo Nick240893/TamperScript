@@ -79,11 +79,12 @@
     	if (selection != '') {
     		var range = selection.getRangeAt(0);
     		var spn = document.createElement("span");
+    		spn.classList.add('clippy')
     		spn.appendChild(range.cloneContents());
     		console.log(selection.anchorNode.parentElement.innerHTML)
     		//var text = selection.toString();
             //var range = selection.getRangeAt(0);
-            //var parent = $(range.startContainer.parentNode);
+            //var parent = $(range.startContainer);
     		//range.deleteContents();
             //range.insertNode($('<span class="clippy">' + text + '</span>')[0]);
             //$('span.clippy:empty').remove();
