@@ -107,6 +107,7 @@
     el.id = 'clippyTextArea'
     document.body.appendChild(el);
 
+function show() {
     var els = document.getElementsByClassName('clippy');
     var edt = document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
     for (var X=0; X< els.length; X++) {
@@ -114,8 +115,8 @@
         els[X].setAttribute("onClick", "clippy(this);");
         if (!(edt)) {els[X].style.color = "#009ac3"};
     }
-
-
+}
+show();
     </script>
 </body>
 </html>
