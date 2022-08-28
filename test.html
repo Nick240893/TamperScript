@@ -76,11 +76,12 @@
     
     function addClippy() {
     	var selection = window.getSelection();
-    	if (selection != '') {
+    	if (selection.toString() != '') {
     		var range = selection.getRangeAt(0);
     		var spn = document.createElement("span");
     		spn.classList.add('clippy')
     		spn.appendChild(range.cloneContents());
+    		console.log
     		console.log(selection.anchorNode.parentElement.innerHTML)
     		//var text = selection.toString();
             //var range = selection.getRangeAt(0);
