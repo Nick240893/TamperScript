@@ -83,7 +83,7 @@
     		range.deleteContents();
             range.insertNode($('<span class="clippy">' + text + '</span>')[0]);
             $('span.clippy:empty').remove();
-            parent.innerHTML.replace()
+            parent.innerHTML.replace(/\n/gi, '')
             show();
     	}
     }
@@ -133,7 +133,7 @@ show();
 </body>
 </html>
 
-
+<>
 
 var span = document.getElementById("foo");
 span.parentNode.replaceChild(document.createTextNode("bar"), span
