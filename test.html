@@ -77,8 +77,10 @@
     function addClippy() {
     	var selection = window.getSelection();
     	if (selection != '') {
-    		var range = ).getRangeAt(0);
+    		var range = selection.getRangeAt(0);
     		var spn = document.createElement("span");
+    		aux.appendChild(range.cloneContents());
+    		console.log(edv.innerHTML)
     		//var text = selection.toString();
             //var range = selection.getRangeAt(0);
             //var parent = $(range.startContainer.parentNode);
