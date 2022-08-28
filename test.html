@@ -77,13 +77,15 @@
     function addClippy() {
     	var selection = window.getSelection();
     	if (selection != '') {
-    		var text = selection.toString();
-            var range = selection.getRangeAt(0);
-            var parent = $(range.startContainer.parentNode);
-    		range.deleteContents();
-            range.insertNode($('<span class="clippy">' + text + '</span>')[0]);
-            $('span.clippy:empty').remove();
-            console.log(selection.anchorNode.parentElement.innerHTML.replace(/\n/gi, ''))
+    		var range = ).getRangeAt(0);
+    		var spn = document.createElement("span");
+    		//var text = selection.toString();
+            //var range = selection.getRangeAt(0);
+            //var parent = $(range.startContainer.parentNode);
+    		//range.deleteContents();
+            //range.insertNode($('<span class="clippy">' + text + '</span>')[0]);
+            //$('span.clippy:empty').remove();
+            //console.log(selection.anchorNode.parentElement.innerHTML.replace(/\n/gi, ''))
             //parent.innerHTML.replace(/\n/gi, '');
             //document.getElementById('ttttt').value=parent.innerHTML
             show();
