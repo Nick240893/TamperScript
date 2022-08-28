@@ -65,7 +65,7 @@
         div.innerHTML = "\
 	    <div onclick='            ' id='clippyMgmtTlt' class='cssTiTleToTop  cssStyleButton'>Clippy Manager</div><br><br>\
         <div onclick='addClippy();' id='clippyMgmtAdd' class='cssButtonToTop cssStyleButton'>Aggiungi</div><br> \
-        <div onclick='            ' id='clippyMgmtRmv' class='cssButtonToTop cssStyleButton'>Elimina</div><br>\
+        <div onclick='rmvClippy();' id='clippyMgmtRmv' class='cssButtonToTop cssStyleButton'>Elimina</div><br>\
         <div onclick='            ' id='clippyMgmtAll' class='cssButtonToTop cssStyleButton'>Elimina Tutto</div><br>"
         $(div).appendTo("body");
         $(".cssButtonContainer").css({"display": "block", "position": "fixed", "bottom": "20px", "left": "10px", "font-size": "5px", "padding": "20px","user-select":"none","text-align": "center"});
@@ -86,7 +86,18 @@
             show();
     	}
     }
-    
+    function rmvClippy() {
+    var els = document.getElementsByClassName('clippy');
+	    for (var X=0; X< els.length; X++) {
+			console.log(els[X]);
+			els[X].setAttribute("onClick", "clippyRmv(this);");
+		}
+    }
+	
+	function clippyRmv(el) {
+		$(el).replaceWith(el.innerText)
+	}
+	
     //clippy
         function clippy(text) {
           if (window.tst != undefined) {return} else {window.tst=1};
