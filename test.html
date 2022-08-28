@@ -39,9 +39,7 @@
           } else {
             range.deleteContents();
             range.insertNode($('<span class="clippy">' + text + '</span>')[0]);
-            //Remove all empty elements (deleteContents leaves the HTML in place)
-            $('span.' + self.attributes['data-tagClass'].value + ':empty').remove();
-            console.log('88')
+            $('span.clippy:empty').remove();
           }
         }
       }
@@ -79,7 +77,10 @@
     function addClippy() {
     	var selection = window.getSelection();
     	if (selection != '') {
-    		
+    		            range.deleteContents();
+            range.insertNode($('<span class="clippy">' + text + '</span>')[0]);
+            $('span.clippy:empty').remove();
+ 
     	}
     }
     
