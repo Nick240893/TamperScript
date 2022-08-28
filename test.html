@@ -38,9 +38,9 @@
             console.log(parent.html().substr(selection.focusOffset))
           } else {
             range.deleteContents();
-            range.insertNode($('<' + self.attributes['data-tag'].value + ' class="'  + '">' + text + '</span>')[0]);
+            range.insertNode($('<span class="clippy">' + text + '</span>')[0]);
             //Remove all empty elements (deleteContents leaves the HTML in place)
-            $(self.attributes['data-tag'].value + '.' + self.attributes['data-tagClass'].value + ':empty').remove();
+            $('span.' + self.attributes['data-tagClass'].value + ':empty').remove();
             console.log('88')
           }
         }
