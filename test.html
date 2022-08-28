@@ -2,18 +2,8 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-<style type="text/css">
-.emphasized {
-  text-decoration: underline;
-  font-weight: bold;
-  font-style: italic;
-}
-</style>
-</head>
 <body>
-  <button type="button" onclick="applyTagwClass(this);" data-tag="span" data-tagClass="emphasized">Bold</button>
-  <div  class="textEditor">
+  <div>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada quis lorem non consequat. Proin diam magna, molestie nec leo non, sodales eleifend nibh. Suspendisse a tellus facilisis, adipiscing dui vitae, rutrum mi. Curabitur aliquet
       lorem quis augue laoreet feugiat. Nulla at volutpat enim, et facilisis velit. Nulla feugiat quis augue nec sodales. Nulla nunc elit, viverra nec cursus non, gravida ac leo. Proin vehicula tincidunt euismod.</p>
     <p>Suspendisse non consectetur arcu, ut ultricies nulla. Sed vel sem quis lacus faucibus interdum in sed quam. Nulla ullamcorper bibendum ornare. Proin placerat volutpat dignissim. Ut sit amet tellus enim. Nulla ut convallis quam. Morbi et
@@ -24,28 +14,6 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>
-      function applyTagwClass(self) {
-        var selection = window.getSelection();
-        if (selection.rangeCount) {
-          var text = selection.toString();
-          var range = selection.getRangeAt(0);
-          var parent = $(range.startContainer.parentNode);
-          if (range.startOffset > 0 && parent.hasClass(self.attributes['data-tagClass'].value)) {
-            var prefix = '<span class="emphasized">' + parent.html().substr(0,selection.anchorOffset) + '</span>';
-            var suffix = '<span class="emphasized">' + parent.html().substr(selection.focusOffset) + '</span>';
-            parent.replaceWith(prefix + text + suffix);
-            console.log(parent.html().substr(0,selection.anchorOffset))
-            console.log(parent.html().substr(selection.focusOffset))
-          } else {
-            range.deleteContents();
-            range.insertNode($('<span class="clippy">' + text + '</span>')[0]);
-            $('span.clippy:empty').remove();
-          }
-        }
-      }
-      
-      
-      
       //clippyMgmt
       document.addEventListener("selectionchange", () => {
       	var tmp=document.getSelection().toString();
