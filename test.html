@@ -79,8 +79,8 @@
 	}
 	
 	function rmvAllClippy() {
-		var elss = document.getElementsByClassName('clippy');
-		console.log(elss.length)
+		var els = document.getElementsByClassName('clippy');
+		var lng = els.length
         for (var Z=0; Z < elss.length; Z++) {
             $(elss[Z]).contents().unwrap();
             console.log(Z + ' di ' + elss.length)
