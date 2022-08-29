@@ -4,8 +4,9 @@
 <html>
 <body>
   <div>
-    <p id='test' class="clippy">Lorem <b>ipsum</b> dolor sit amet, consectetur adipiscing elit. In malesuada quis lorem non consequat. Proin diam magna, molestie nec leo non, sodales eleifend nibh. Suspendisse a tellus facilisis, adipiscing dui vitae, rutrum mi. Curabitur aliquet lorem quis augue laoreet feugiat. Nulla at volutpat enim, et facilisis velit. Nulla feugiat quis augue nec sodales. Nulla nunc elit, viverra nec cursus non, gravida ac leo. Proin vehicula tincidunt euismod.</p>
-<pre>test tdd gioiu</pre>
+    <p id='test' class="">Lorem <b>ipsum</b> dolor sit amet, consectetur adipiscing elit. In malesuada quis lorem non consequat. Proin diam magna, molestie nec leo non, sodales eleifend nibh. Suspendisse a tellus facilisis, adipiscing dui vitae, rutrum mi. Curabitur aliquet lorem quis augue laoreet feugiat. Nulla at volutpat enim, et facilisis velit. Nulla feugiat quis augue nec sodales. Nulla nunc elit, viverra nec cursus non, gravida ac leo. Proin vehicula tincidunt euismod.</p>
+<pre id="test2">test tdd 
+             gioiu</pre>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>
@@ -50,7 +51,7 @@
     		var els=spn.getElementsByClassName('clippy')
     		if (els[0]) {for (var X=0; X< els.length; X++) {$(els[X]).contents().unwrap()}}
     		if (spn.parentNode.classList.contains('clippy')) {$(spn).contents().unwrap();}
-    		console.log(document.getElementById('test').innerHTML)
+    		console.log(document.getElementById('test2').innerHTML)
     		console.log(selection.anchorNode.parentElement.innerHTML)
     		selection.removeAllRanges();
 			show();
