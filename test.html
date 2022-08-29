@@ -15,10 +15,11 @@
         if (tmp) {
         	clippyMgmtAdd.style.backgroundColor='#0050FE'
         	clippyMgmtAdd.style.cursor='pointer'
-    		clippyMgmtAdd.setAttribute("onClick", "");
+    		clippyMgmtAdd.setAttribute("onClick", "addClippy()");
         } else {
-            add.style.backgroundColor='#c1c1c1'
-            add.style.cursor=''
+        	clippyMgmtAdd.style.backgroundColor='#C1C1C1'
+        	clippyMgmtAdd.style.cursor=''
+    		clippyMgmtAdd.setAttribute("onClick", "");
         }
       });
 
