@@ -55,6 +55,7 @@
     //view mode function
     function clippy(text) {
         if (window.clippyIstnt != undefined) {return} else {window.clippyIstnt=1};
+        var el = document.getElementById("clippyTextArea");
         el.value = text.innerText.replace(/[\n]*$/gi,"").replace(/^[	]*/gi, '').replace(/[	]*$/gi, '');
         el.select();
         document.execCommand('copy');
