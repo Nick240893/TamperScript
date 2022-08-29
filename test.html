@@ -64,7 +64,7 @@
     	var els = document.getElementsByClassName('clippy');
     	if (mode && mode=='enable') {
 	    	for (var X=0; X< els.length; X++) {
-				els[X].setAttribute("onClick", "clippyRmv(this);");
+				els[X].setAttribute("onClick", "$(this).contents().unwrap();");
 			}
 			clippyMgmtRmv.style.backgroundColor='red';
 			clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
@@ -131,6 +131,9 @@ window.clippyMgmtAdd=document.getElementById('clippyMgmtAdd')
 window.clippyMgmtRmv=document.getElementById('clippyMgmtRmv')
 window.clippyMgmtAll=document.getElementById('clippyMgmtAll')
 show();
+var texty = 'ciao';
+(function(){var text = 'nooo';console.log(texty)})();
+console.log(texty)
     </script>
 </body>
 </html>
