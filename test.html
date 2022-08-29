@@ -45,14 +45,6 @@
         }
     }
 
-    function flashClippy() {
-        var els = document.getElementsByClassName('clippy');
-        for (var X=0; X< els.length; X++) {
-            els[X].style.color='#009ac3'
-            setTimeout(function(){}, 500)
-        }
-    }
-
     function rmvAllClippy() {
         var els = document.getElementsByClassName('clippy');
         var lng = els.length;
@@ -93,7 +85,10 @@
         }
         for (var X=0; X< els.length; X++) {
             els[X].setAttribute("onClick", "clippy(this);");
-            if (!(edt)) {els[X].style.color = "#009ac3"};
+            if (!(edt)) {
+                els[X].style.color = "#009ac3"
+                els[X].style.textDecoration = "underline";
+            };
         }
     }
 
