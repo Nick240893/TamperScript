@@ -12,7 +12,7 @@
 (function() {
     //edit mode o //view mode?
     var editMode = "g"; //document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
-        if (editMode && !(document.getElementById("clippyMgmtTlt"))) {
+    if (editMode && !(document.getElementById("clippyMgmtTlt"))) {
         var div = document.createElement('div');
         div.classList.add("cssButtonContainer");
         div.innerHTML = "\
@@ -25,6 +25,8 @@
         $(".cssStyleButton").css({"font-size": "18px", "border": "none", "outline": "none", "background-color": "#C1C1C1", "color": "white"});
         $(".cssButtonToTop").css({"display": "", "cursor": "", "padding": "5px","width":"60%", "margin":"0 auto"});
         $(".cssTiTleToTop").css({"width": "-moz-min-content", "padding": "5px", "background-color": "#0050FE", "color": "white"});
+    } else if () {
+        
     }
     
     
