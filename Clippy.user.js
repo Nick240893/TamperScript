@@ -10,6 +10,11 @@
 // ==/UserScript==
 
 (function() {
+    
+    //edit mode function
+    
+    
+    
     //edit mode o //view mode?
     (function(){
         var editMode = "g"; //document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
@@ -55,7 +60,7 @@
         //view Mode ended
         }
     })();
-    
+    show();
     
     
     
