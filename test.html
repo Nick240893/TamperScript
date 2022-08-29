@@ -92,10 +92,10 @@ function show() {
     var els = document.getElementsByClassName('clippy');
     var edt = document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
     if (els[0]) {
-    	document.getElementById('clippyMgmtRmv').style.backgroundColor='#0050FE';
-    	document.getElementById('clippyMgmtRmv').style.cursor='pointer'
-    	document.getElementById('clippyMgmtAll').style.backgroundColor='#0050FE';
-    	document.getElementById('clippyMgmtAll').style.cursor='pointer'
+    	clippyMgmtRmv.style.backgroundColor='#0050FE';
+    	clippyMgmtRmv.style.cursor='pointer'
+    	clippyMgmtAll.style.backgroundColor='#0050FE';
+    	clippyMgmtAll.style.cursor='pointer'
     } else {
     	document.getElementById('clippyMgmtRmv').style.backgroundColor='#C1C1C1';
     	document.getElementById('clippyMgmtRmv').style.cursor=''
@@ -108,9 +108,9 @@ function show() {
     }
 }
 window.clippyMgmtTlt=document.getElementById('clippyMgmtTlt')
-window.clippyMgmtAdd=document.getElementById('clippyMgmtRmv')
-window.clippyMgmtRmv=
-window.clippyMgmtAll=
+window.clippyMgmtAdd=document.getElementById('clippyMgmtAdd')
+window.clippyMgmtRmv=document.getElementById('clippyMgmtRmv')
+window.clippyMgmtAll=document.getElementById('clippyMgmtAll')
 show();
     </script>
 </body>
