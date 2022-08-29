@@ -26,7 +26,7 @@
             if (els[0]) {for (var X=0; X< els.length; X++) {$(els[X]).contents().unwrap()}}
             if (spn.parentNode.classList.contains('clippy')) {$(spn).contents().unwrap();}
             selection.removeAllRanges();
-            show();
+            core();
             //console.log(document.getElementById('test2').innerHTML)
             //console.log(selection.anchorNode.parentElement.innerHTML)
         }
@@ -43,7 +43,7 @@
             clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
         }
         if (mode && mode=='disable') {
-        show();
+        core();
         }
     }
 
@@ -51,7 +51,7 @@
         var els = document.getElementsByClassName('clippy');
         var lng = els.length;
         for (var Y=0; Y < lng; Y++) {$(els[0]).contents().unwrap()};
-        show();
+        core();
     }
 
     //view mode function
@@ -66,7 +66,7 @@
         setTimeout(function(){text.style.color = bkp; window.clippyIstnt=undefined;} ,300)
     }
 
-    function show() {
+    function core() {
         var els = document.getElementsByClassName('clippy');
         var edt = document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
         if (els[0]) {
@@ -76,19 +76,19 @@
             clippyMgmtAll.style.backgroundColor='#0050FE';
             clippyMgmtAll.style.cursor='pointer'
             clippyMgmtAll.setAttribute("onClick", "rmvAllClippy()");
-    } else {
+        } else {
             clippyMgmtRmv.style.backgroundColor='#C1C1C1';
             clippyMgmtRmv.style.cursor=''
             clippyMgmtRmv.setAttribute("onClick", "");
             clippyMgmtAll.style.backgroundColor='#C1C1C1';
             clippyMgmtAll.style.cursor=''
             clippyMgmtAll.setAttribute("onClick", "");
+        }
+        for (var X=0; X< els.length; X++) {
+            els[X].setAttribute("onClick", "clippy(this);");
+            if (!(edt)) {els[X].style.color = "#009ac3"};
+        }
     }
-    for (var X=0; X< els.length; X++) {
-        els[X].setAttribute("onClick", "clippy(this);");
-        if (!(edt)) {els[X].style.color = "#009ac3"};
-    }
-}
 
     //edit mode o //view mode?
     (function(){
@@ -131,7 +131,7 @@
         el.id = 'clippyTextArea'
         document.body.appendChild(el);
     })();
-    show();
+    core();
     
     
     
