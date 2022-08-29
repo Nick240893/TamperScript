@@ -97,12 +97,14 @@ function show() {
     	clippyMgmtRmv.setAttribute("onClick", "rmvClippy('enabled');");
     	clippyMgmtAll.style.backgroundColor='#0050FE';
     	clippyMgmtAll.style.cursor='pointer'
-    	clippyMgmtAll.setAttribute("onClick", "");
+    	clippyMgmtAll.setAttribute("onClick", "rmvAllClippy()");
     } else {
-    	document.getElementById('clippyMgmtRmv').style.backgroundColor='#C1C1C1';
-    	document.getElementById('clippyMgmtRmv').style.cursor=''
-    	document.getElementById('clippyMgmtAll').style.backgroundColor='#C1C1C1';
-    	document.getElementById('clippyMgmtAll').style.cursor=''
+    	clippyMgmtRmv.style.backgroundColor='#C1C11C1';
+    	clippyMgmtRmv.style.cursor=''
+    	clippyMgmtRmv.setAttribute("onClick", "");
+    	clippyMgmtAll.style.backgroundColor='#0050FE';
+    	clippyMgmtAll.style.cursor=''
+    	clippyMgmtAll.setAttribute("onClick", "");
     }
     for (var X=0; X< els.length; X++) {
         //els[X].setAttribute("onClick", "clippy(this);");
