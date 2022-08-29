@@ -12,7 +12,25 @@
 (function() {
     
     //edit mode function
-    
+    function addClippy() {
+        var selection = window.getSelection();
+        var string = selection.toString();
+        if ( string != '' && !(/^[ 	]*$/gi.test(string)) ) {
+            var range = selection.getRangeAt(0);
+            var spn = document.createElement("span");
+            spn.classList.add('clippy');
+            spn.appendChild(range.extractContents());
+            range.insertNode(spn); 
+            $('span.clippy:empty').remove();
+            var els=spn.getElementsByClassName('clippy')
+            if (els[0]) {for (var X=0; X< els.length; X++) {$(els[X]).contents().unwrap()}}
+            if (spn.parentNode.classList.contains('clippy')) {$(spn).contents().unwrap();}
+            selection.removeAllRanges();
+            show();
+            //console.log(document.getElementById('test2').innerHTML)
+            //console.log(selection.anchorNode.parentElement.innerHTML)
+        }
+    }
     
     
     //edit mode o //view mode?
