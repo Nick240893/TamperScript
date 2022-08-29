@@ -10,6 +10,24 @@
 // ==/UserScript==
 
 (function() {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     function clippy(text) {
           if (window.tst != undefined) {return} else {window.tst=1};
           el.value = text.innerText.replace(/\n*$/gi,"");;
