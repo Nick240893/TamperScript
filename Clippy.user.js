@@ -12,9 +12,9 @@
 (function() {
     //edit mode o //view mode?
     var editMode = "g"; //document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
-    
-    
-    
+    if (editMode && !(document.getElementById("clippyMgmtTlt"))) {
+        
+    }
     
     
     
