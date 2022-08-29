@@ -130,13 +130,11 @@
         el.style.left = '-9999px';
         el.id = 'clippyTextArea'
         document.body.appendChild(el);
+        window.core=core;
         window.clippy=clippy;
         window.addClippy=addClippy;
         window.rmvClippy=rmvClippy;
-        window.addClippy=addClippy;
-        window.addClippy=addClippy;
-        window.addClippy=addClippy;
-        window.addClippy=addClippy;
+        window.rmvAllClippy=rmvAllClippy;
     })();
     core();
     
