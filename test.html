@@ -91,7 +91,7 @@
     //clippy
         function clippy(text) {
           if (window.tst != undefined) {return} else {window.tst=1};
-          el.value = text.innerText.replace(/\n*$/gi,"");;
+          el.value = text.innerText.replace(/[\n]*$/gi,"").replace(/[/gi);
           el.select();
           document.execCommand('copy');
           window.getSelection().removeAllRanges();
