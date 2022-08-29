@@ -28,6 +28,10 @@
             $(".cssStyleButton").css({"font-size": "18px", "border": "none", "outline": "none", "background-color": "#C1C1C1", "color": "white"});
             $(".cssButtonToTop").css({"display": "", "cursor": "", "padding": "5px","width":"60%", "margin":"0 auto"});
             $(".cssTiTleToTop").css({"width": "-moz-min-content", "padding": "5px", "background-color": "#0050FE", "color": "white"});
+            window.clippyMgmtTlt=document.getElementById('clippyMgmtTlt');
+            window.clippyMgmtAdd=document.getElementById('clippyMgmtAdd');
+            window.clippyMgmtRmv=document.getElementById('clippyMgmtRmv');
+            window.clippyMgmtAll=document.getElementById('clippyMgmtAll');
         } else if (!(editMode) && (viewMode)) {
             //view Mode
             var el = document.createElement('textarea');
