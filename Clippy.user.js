@@ -97,6 +97,7 @@
         if (editMode && !(document.getElementById("clippyMgmtTlt"))) {
         //edit Mode
             var div = document.createElement('div');
+            div.id = 'clippyMgmtContainer'
             div.classList.add("cssButtonContainer");
             div.innerHTML = "\
                 <div id='clippyMgmtTlt' class='cssTiTleToTop  cssStyleButton'>Clippy Manager</div><br><br>\
