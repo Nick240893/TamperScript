@@ -10,7 +10,7 @@
 // ==/UserScript==
 
 (function() {
-    
+
     //edit mode function
     function addClippy() {
         var selection = window.getSelection();
@@ -46,8 +46,15 @@
         show();
         }
     }
-    
-    
+
+    function rmvAllClippy() {
+        var els = document.getElementsByClassName('clippy');
+        var lng = els.length;
+        for (var Y=0; Y < lng; Y++) {$(els[0]).contents().unwrap()};
+        show();
+    }
+
+
     //edit mode o //view mode?
     (function(){
         var editMode = "g"; //document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
