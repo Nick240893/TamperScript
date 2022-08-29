@@ -37,7 +37,7 @@
         var els = document.getElementsByClassName('clippy');
         if (mode && mode=='enable') {
             for (var X=0; X< els.length; X++) {
-                els[X].setAttribute("onClick", "clippyRmv(this);");
+                els[X].setAttribute("onClick", "$(this).contents().unwrap()");
             }
             clippyMgmtRmv.style.backgroundColor='red';
             clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
