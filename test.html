@@ -67,12 +67,8 @@
 			clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
 		}
     	if (mode && mode='disable') {
-	    	for (var X=0; X< els.length; X++) {
-				els[X].setAttribute("onClick", "clippy(this);");
-			}
-			clippyMgmtRmv.style.backgroundColor='red';
-			clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
-		}
+		show();
+    	}
     }
 	
 	function clippyRmv(el) {
@@ -119,7 +115,7 @@ function show() {
     	clippyMgmtAll.setAttribute("onClick", "");
     }
     for (var X=0; X< els.length; X++) {
-        //els[X].setAttribute("onClick", "clippy(this);");
+        els[X].setAttribute("onClick", "clippy(this);");
         if (!(edt)) {els[X].style.color = "#009ac3"};
     }
 }
