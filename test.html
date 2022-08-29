@@ -4,7 +4,7 @@
 <html>
 <body>
   <div>
-    <p id='test'>Lorem <b>ipsum<b> dolor sit amet, consectetur adipiscing elit. In malesuada quis lorem non consequat. Proin diam magna, molestie nec leo non, sodales eleifend nibh. Suspendisse a tellus facilisis, adipiscing dui vitae, rutrum mi. Curabitur aliquet lorem quis augue laoreet feugiat. Nulla at volutpat enim, et facilisis velit. Nulla feugiat quis augue nec sodales. Nulla nunc elit, viverra nec cursus non, gravida ac leo. Proin vehicula tincidunt euismod.</p>
+    <p id='test'>Lorem <b>ipsum</b> dolor sit amet, consectetur adipiscing elit. In malesuada quis lorem non consequat. Proin diam magna, molestie nec leo non, sodales eleifend nibh. Suspendisse a tellus facilisis, adipiscing dui vitae, rutrum mi. Curabitur aliquet lorem quis augue laoreet feugiat. Nulla at volutpat enim, et facilisis velit. Nulla feugiat quis augue nec sodales. Nulla nunc elit, viverra nec cursus non, gravida ac leo. Proin vehicula tincidunt euismod.</p>
 <pre>test tdd gioiu</pre>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -72,6 +72,7 @@
 	
 	function clippyRmv(el) {
 		$(el).contents().unwrap();
+		console.log(document.getElementById('test').innerHTML)
 	}
 	
     //clippy
