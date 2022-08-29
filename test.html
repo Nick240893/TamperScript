@@ -93,11 +93,14 @@ function show() {
     var edt = document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
     if (els[0]) {
     	document.getElementById('clippyMgmtRmv').style.backgroundColor='#0050FE';
-    	
+    	document.getElementById('clippyMgmtRmv').style.cursor='pointer'
     	document.getElementById('clippyMgmtAll').style.backgroundColor='#0050FE';
+    	document.getElementById('clippyMgmtAll').style.cursor='pointer'
     } else {
     	document.getElementById('clippyMgmtRmv').style.backgroundColor='#C1C1C1';
+    	document.getElementById('clippyMgmtRmv').style.cursor=''
     	document.getElementById('clippyMgmtAll').style.backgroundColor='#C1C1C1';
+    	document.getElementById('clippyMgmtAll').style.cursor=''
     }
     for (var X=0; X< els.length; X++) {
         //els[X].setAttribute("onClick", "clippy(this);");
