@@ -48,7 +48,7 @@
     		range.insertNode(spn); 
     		$('span.clippy:empty').remove();
     		console.log(spn.parentNode.classList.contains('clippy'))
-    		(spn.parentNode.classList.contains('clippy')) 
+    		if (spn.parentNode.classList.contains('clippy'))$(spn).contents().unwrap() : 
     		selection.removeAllRanges();
 			show();
     	}
