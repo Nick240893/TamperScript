@@ -83,7 +83,7 @@
 		var lng = els.length
         for (var Y=0; Y < lng; Y++) {
         	console.log(els[Y].innerText)
-            $(els[Y]).contents().unwrap();
+            $(els[Y]).replaceWith(els[Y].innerText);
         }
         show()
 	}
