@@ -42,9 +42,9 @@
             clippyMgmtRmv.style.backgroundColor='red';
             clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
         }
-    	if (mode && mode=='disable') {
-		show();
-    	}
+        if (mode && mode=='disable') {
+        show();
+        }
     }
     
     
