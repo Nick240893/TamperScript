@@ -34,7 +34,7 @@
         $(div).appendTo("body");
         $(".cssButtonContainer").css({"display": "block", "position": "fixed", "bottom": "20px", "left": "10px", "font-size": "5px", "padding": "20px","user-select":"none","text-align": "center"});
         $(".cssStyleButton").css({"font-size": "18px", "border": "none", "outline": "none", "background-color": "#C1C1C1", "color": "white"});
-        $(".cssButtonToTop").css({"display": "", "cursor": "pointer", "padding": "5px","width":"60%", "margin":"0 auto"});
+        $(".cssButtonToTop").css({"display": "", "cursor": "", "padding": "5px","width":"60%", "margin":"0 auto"});
         $(".cssTiTleToTop").css({"width": "-moz-min-content", "padding": "5px", "background-color": "#0050FE", "color": "white"});
     }
     
@@ -65,6 +65,7 @@
 	
 	function clippyRmv(el) {
 		$(el).contents().unwrap();
+		show()
 		console.log(document.getElementById('test').innerHTML)
 	}
 	
@@ -92,6 +93,7 @@ function show() {
     var edt = document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
     if (els[0]) {
     	document.getElementById('clippyMgmtRmv').style.backgroundColor='#0050FE';
+    	
     	document.getElementById('clippyMgmtAll').style.backgroundColor='#0050FE';
     } else {
     	document.getElementById('clippyMgmtRmv').style.backgroundColor='#C1C1C1';
