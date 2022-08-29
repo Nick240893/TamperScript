@@ -31,6 +31,21 @@
             //console.log(selection.anchorNode.parentElement.innerHTML)
         }
     }
+
+    function rmvClippy(mode) {
+        window.getSelection().removeAllRanges();
+        var els = document.getElementsByClassName('clippy');
+        if (mode && mode=='enable') {
+            for (var X=0; X< els.length; X++) {
+                els[X].setAttribute("onClick", "clippyRmv(this);");
+            }
+            clippyMgmtRmv.style.backgroundColor='red';
+            clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
+        
+    	if (mode && mode=='disable') {
+		show();
+    	}
+    }
     
     
     //edit mode o //view mode?
