@@ -52,12 +52,13 @@
     		var els=spn.getElementsByClassName('clippy')
     		if (els[0]) {for (var X=0; X< els.length; X++) {$(els[X]).contents().unwrap()}}
     		if (spn.parentNode.classList.contains('clippy')) {$(spn).contents().unwrap();}
-    		//console.log(document.getElementById('test2').innerHTML)
-    		//console.log(selection.anchorNode.parentElement.innerHTML)
     		selection.removeAllRanges();
 			show();
+    		//console.log(document.getElementById('test2').innerHTML)
+    		//console.log(selection.anchorNode.parentElement.innerHTML)
     	}
     }
+    
     function rmvClippy(mode) {
     	window.getSelection().removeAllRanges();
     	var els = document.getElementsByClassName('clippy');
@@ -77,11 +78,9 @@
 	
 	function rmvAllClippy() {
 		var els = document.getElementsByClassName('clippy');
-		var lng = els.length
-        for (var Y=0; Y < lng; Y++) {
-            $(els[0]).contents().unwrap();
-        }
-        show()
+		var lng = els.length;
+        for (var Y=0; Y < lng; Y++) {$(els[0]).contents().unwrap()};
+        show();
 	}
 	
     //clippy
