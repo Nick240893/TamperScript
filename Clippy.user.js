@@ -32,6 +32,18 @@
             window.clippyMgmtAdd=document.getElementById('clippyMgmtAdd');
             window.clippyMgmtRmv=document.getElementById('clippyMgmtRmv');
             window.clippyMgmtAll=document.getElementById('clippyMgmtAll');
+            document.addEventListener("selectionchange", () => {
+                var tmp=document.getSelection().toString();
+                if (tmp) {
+                    clippyMgmtAdd.style.backgroundColor='#0050FE'
+                    clippyMgmtAdd.style.cursor='pointer'
+                    clippyMgmtAdd.setAttribute("onClick", "addClippy()");
+                } else {
+                    clippyMgmtAdd.style.backgroundColor='#C1C1C1'
+                    clippyMgmtAdd.style.cursor=''
+                    clippyMgmtAdd.setAttribute("onClick", "");
+                }
+            });
         } else if (!(editMode) && (viewMode)) {
             //view Mode
             var el = document.createElement('textarea');
