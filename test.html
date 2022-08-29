@@ -94,9 +94,10 @@ function show() {
     if (els[0]) {
     	clippyMgmtRmv.style.backgroundColor='#0050FE';
     	clippyMgmtRmv.style.cursor='pointer'
-    	clippyMgmtRmv.setAttribute("onClick", "rmvClippy(this);");
+    	clippyMgmtRmv.setAttribute("onClick", "rmvClippy('enabled');");
     	clippyMgmtAll.style.backgroundColor='#0050FE';
     	clippyMgmtAll.style.cursor='pointer'
+    	clippyMgmtRmv.setAttribute("onClick", "");
     } else {
     	document.getElementById('clippyMgmtRmv').style.backgroundColor='#C1C1C1';
     	document.getElementById('clippyMgmtRmv').style.cursor=''
