@@ -15,6 +15,7 @@
         var editMode = "g"; //document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
         var viewMode = "g"; //document.getElementById("layoutsTable");
         if (editMode && !(document.getElementById("clippyMgmtTlt"))) {
+            //edit Mode
             var div = document.createElement('div');
             div.classList.add("cssButtonContainer");
             div.innerHTML = "\
@@ -28,6 +29,7 @@
             $(".cssButtonToTop").css({"display": "", "cursor": "", "padding": "5px","width":"60%", "margin":"0 auto"});
             $(".cssTiTleToTop").css({"width": "-moz-min-content", "padding": "5px", "background-color": "#0050FE", "color": "white"});
         } else if (!(editMode) && (viewMode)) {
+            //view Mode
             var el = document.createElement('textarea');
             el.style.position = 'absolute';
             el.style.left = '-9999px';
