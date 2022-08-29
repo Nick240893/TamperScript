@@ -56,14 +56,14 @@
 
     //view mode function
     function clippy(text) {
-        if (window.tst != undefined) {return} else {window.tst=1};
+        if (window.clippyIstnt != undefined) {return} else {window.clippyIstnt=1};
         el.value = text.innerText.replace(/[\n]*$/gi,"").replace(/^[	]*/gi, '').replace(/[	]*$/gi, '');
         el.select();
         document.execCommand('copy');
         window.getSelection().removeAllRanges();
         var bkp = (text.style.color === undefined) ? '' : text.style.color;
-          text.style.color = 'red';
-        setTimeout(function(){text.style.color = bkp; window.tst=undefined;} ,300)
+        text.style.color = 'red';
+        setTimeout(function(){text.style.color = bkp; window.clippyIstnt=undefined;} ,300)
     }
 
 
