@@ -47,7 +47,7 @@
     		spn.appendChild(range.extractContents());
     		range.insertNode(spn); 
     		$('span.clippy:empty').remove();
-    		console.log(selection.anchorNode.parentElement)
+    		console.log(spn.parentNode)
     		selection.removeAllRanges();
 			show();
     	}
