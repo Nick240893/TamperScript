@@ -79,10 +79,10 @@
 	}
 	
 	function rmvAllClippy() {
-		var els = document.getElementsByClassName('clippy');
-        for (var X=0; X< els.length; X++) {
-            $(els[X]).contents().unwrap();
-            console.log(els[X])
+		var elss = document.getElementsByClassName('clippy');
+        for (var X=0; X < elss.length; X++) {
+            $(elss[X]).contents().unwrap();
+            console.log(elss[X])
         }
         show()
 	}
