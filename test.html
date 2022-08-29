@@ -42,7 +42,7 @@
     function addClippy() {
     	var selection = window.getSelection();
     	var string = selection.toString();
-    	if ( string != '' && string !=) {
+    	if ( string != '' && !(string.includes(/ /gi)) ) {
     		var range = selection.getRangeAt(0);
     		var spn = document.createElement("span");
     		spn.classList.add('clippy');
