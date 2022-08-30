@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clippy
 // @namespace    http://tampermonkey.net/
-// @version      2.5
+// @version      2.6
 // @description  try to take over the world!
 // @author       NigroN
 // @match        https://ts.accenture.com/*
