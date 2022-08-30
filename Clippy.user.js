@@ -177,9 +177,9 @@
         window.rmvClippy=rmvClippy;
         window.rmvAllClippy=rmvAllClippy;
         window.clippyMgmtSwitch=clippyMgmtSwitch;
-        
     })();
     core();
+
 })();
 
 
