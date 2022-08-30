@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clippy
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      2.5
 // @description  try to take over the world!
 // @author       NigroN
 // @match        https://ts.accenture.com/*
@@ -37,21 +37,49 @@
         var els = document.getElementsByClassName('clippy');
         if (mode && mode=='enable') {
             for (var X=0; X< els.length; X++) {
-                els[X].setAttribute("onClick", "$(this).contents().unwrap()");
+                els[X].setAttribute("onClick", "$(this).contents().unwrap(); rmvClippy('chk')");
             }
             clippyMgmtRmv.style.backgroundColor='red';
             clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
         }
-        if (mode && mode=='disable') {
-        core();
+        if (mode && mode=='disable') {core()};
+        if (mode && mode=='chk' && !(els[0])) {
+            clippyMgmtRmv.style.backgroundColor='#C1C1C1';
+            clippyMgmtRmv.style.cursor=''
+            clippyMgmtRmv.setAttribute("onClick", "");
+            clippyMgmtAll.style.backgroundColor='#C1C1C1';
+            clippyMgmtAll.style.cursor=''
+            clippyMgmtAll.setAttribute("onClick", "");
         }
     }
 
     function rmvAllClippy() {
+        var msg = 'ATTENZIONE!!!\nSei sicuro di voler eliminare Clippy in tutta la pagina?\nQuesta azione è irreveribile.'
+        if (confirm(msg) == true) {
+            var els = document.getElementsByClassName('clippy');
+            var lng = els.length;
+            for (var Y=0; Y < lng; Y++) {$(els[0]).contents().unwrap()};
+            core();
+        }
+    }
+
+    function ClippyMgmtSwitch() {
+        var els = document.getElementsByClassName('cssButtonToTop');
+        var lng = Math.round(els.length-1);
+        var mode='';
+        if (els && els[lng] && els[lng].style.display=='none') { mode=''}
+        if (els && els[lng] && !(els[lng].style.display=='none')) { mode='none'}
+        for (var X=0; X< els.length; X++) {els[X].style.display=mode}
+    }
+
+    function unstyled() {
         var els = document.getElementsByClassName('clippy');
-        var lng = els.length;
-        for (var Y=0; Y < lng; Y++) {$(els[0]).contents().unwrap()};
-        core();
+        for (var X=0; X< els.length; X++) {
+            els[X].setAttribute("onClick", "");
+            els[X].style.color = ""
+            els[X].style.textDecoration = "";
+            els[X].style.cursor=''
+        }
     }
 
     //view mode function
@@ -69,34 +97,35 @@
 
     function core() {
         var els = document.getElementsByClassName('clippy');
-        var edt = document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
-        if (els[0]) {
-            clippyMgmtRmv.style.backgroundColor='#0050FE';
-            clippyMgmtRmv.style.cursor='pointer'
-            clippyMgmtRmv.setAttribute("onClick", "rmvClippy('enable');");
-            clippyMgmtAll.style.backgroundColor='#0050FE';
-            clippyMgmtAll.style.cursor='pointer'
-            clippyMgmtAll.setAttribute("onClick", "rmvAllClippy()");
-        } else {
-            clippyMgmtRmv.style.backgroundColor='#C1C1C1';
-            clippyMgmtRmv.style.cursor=''
-            clippyMgmtRmv.setAttribute("onClick", "");
-            clippyMgmtAll.style.backgroundColor='#C1C1C1';
-            clippyMgmtAll.style.cursor=''
-            clippyMgmtAll.setAttribute("onClick", "");
+        if (editMode) {
+            clippyMgmtTlt.setAttribute("onClick", "ClippyMgmtSwitch();");
+            if (els[0]) {
+                clippyMgmtRmv.style.backgroundColor='#0050FE';
+                clippyMgmtRmv.style.cursor='pointer'
+                clippyMgmtRmv.setAttribute("onClick", "rmvClippy('enable');");
+                clippyMgmtAll.style.backgroundColor='#0050FE';
+                clippyMgmtAll.style.cursor='pointer'
+                clippyMgmtAll.setAttribute("onClick", "rmvAllClippy()");
+            } else {
+                clippyMgmtRmv.style.backgroundColor='#C1C1C1';
+                clippyMgmtRmv.style.cursor=''
+                clippyMgmtRmv.setAttribute("onClick", "");
+                clippyMgmtAll.style.backgroundColor='#C1C1C1';
+                clippyMgmtAll.style.cursor=''
+                clippyMgmtAll.setAttribute("onClick", "");
+            }
         }
         for (var X=0; X< els.length; X++) {
             els[X].setAttribute("onClick", "clippy(this);");
-            if (!(edt)) {
                 els[X].style.color = "#009ac3"
                 els[X].style.textDecoration = "underline";
-            };
+                els[X].style.cursor='pointer'
         }
     }
 
     //edit mode o //view mode?
     (function(){
-        var editMode = "g"; //document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
+        window.editMode = document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
         if (editMode && !(document.getElementById("clippyMgmtTlt"))) {
         //edit Mode
             var div = document.createElement('div');
@@ -111,11 +140,16 @@
             $(".cssButtonContainer").css({"display": "block", "position": "fixed", "bottom": "20px", "left": "10px", "font-size": "5px", "padding": "20px","user-select":"none","text-align": "center"});
             $(".cssStyleButton").css({"font-size": "18px", "border": "none", "outline": "none", "background-color": "#C1C1C1", "color": "white"});
             $(".cssButtonToTop").css({"display": "", "cursor": "", "padding": "5px","width":"60%", "margin":"0 auto"});
-            $(".cssTiTleToTop").css({"width": "-moz-min-content", "padding": "5px", "background-color": "#0050FE", "color": "white"});
+            $(".cssTiTleToTop").css({"width": "-moz-min-content", "cursor": "pointer", "padding": "5px", "background-color": "#0050FE", "color": "white"});
             window.clippyMgmtTlt=document.getElementById('clippyMgmtTlt');
             window.clippyMgmtAdd=document.getElementById('clippyMgmtAdd');
             window.clippyMgmtRmv=document.getElementById('clippyMgmtRmv');
             window.clippyMgmtAll=document.getElementById('clippyMgmtAll');
+            //fix save button
+            var sve = document.getElementById("ctl00_PageStateActionButton");
+            var cmd = sve.getAttribute('onclick');
+            sve.setAttribute('onclick', '(async function(){await unstyled();'+cmd+'})()')
+            //select
             document.addEventListener("selectionchange", () => {
                 var tmp=document.getSelection().toString();
                 if (tmp) {
@@ -129,7 +163,7 @@
                 }
             });
         //edit Mode ended
-        } 
+        }
         var el = document.createElement('textarea');
         el.style.position = 'absolute';
         el.style.left = '-9999px';
@@ -137,9 +171,11 @@
         document.body.appendChild(el);
         window.core=core;
         window.clippy=clippy;
+        window.unstyled=unstyled;
         window.addClippy=addClippy;
         window.rmvClippy=rmvClippy;
         window.rmvAllClippy=rmvAllClippy;
+        window.ClippyMgmtSwitch=ClippyMgmtSwitch;
     })();
     core();
 })();
