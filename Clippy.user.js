@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clippy
 // @namespace    http://tampermonkey.net/
-// @version      2.6
+// @version      2.7
 // @description  try to take over the world!
 // @author       NigroN
 // @match        https://ts.accenture.com/*
@@ -63,7 +63,7 @@
         }
     }
 
-    function ClippyMgmtSwitch() {
+    function clippyMgmtSwitch() {
         var els = document.getElementsByClassName('cssButtonToTop');
         var lng = Math.round(els.length-1);
         var mode='';
@@ -98,7 +98,7 @@
     function core() {
         var els = document.getElementsByClassName('clippy');
         if (editMode) {
-            clippyMgmtTlt.setAttribute("onClick", "ClippyMgmtSwitch();");
+            clippyMgmtTlt.setAttribute("onClick", "clippyMgmtSwitch();");
             if (els[0]) {
                 clippyMgmtRmv.style.backgroundColor='#0050FE';
                 clippyMgmtRmv.style.cursor='pointer'
@@ -175,7 +175,7 @@
         window.addClippy=addClippy;
         window.rmvClippy=rmvClippy;
         window.rmvAllClippy=rmvAllClippy;
-        window.ClippyMgmtSwitch=ClippyMgmtSwitch;
+        window.clippyMgmtSwitch=clippyMgmtSwitch;
     })();
     core();
 })();
