@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sharpoint SearchBar
 // @namespace    http://tampermonkey.net/
-// @version      2.5
+// @version      2.6
 // @description  try to take over the world!
 // @author       NigroN
 // @include      https://ts.accenture.com/*
