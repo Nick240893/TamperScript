@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clippy
 // @namespace    http://tampermonkey.net/
-// @version      2.8
+// @version      2.9
 // @description  try to take over the world!
 // @author       NigroN
 // @match        https://ts.accenture.com/*
@@ -21,25 +21,23 @@
             var spn = document.createElement("span");
             spn.classList.add('clippy');
             spn.appendChild(range.extractContents());
-            range.insertNode(spn); 
+            range.insertNode(spn);
             $('span.clippy:empty').remove();
             var els=spn.getElementsByClassName('clippy')
-            if (els[0]) {for (var X=0; X< els.length; X++) {$(els[X]).contents().unwrap()}}
+            if (els[0]) {for (var el of els) {$(el).contents().unwrap()}}
             if (spn.parentNode.classList.contains('clippy')) {$(spn).contents().unwrap();}
             selection.removeAllRanges();
             core();
-            //console.log(document.getElementById('test2').innerHTML)
-            //console.log(selection.anchorNode.parentElement.innerHTML)
         }
     }
 
     function rmvClippy(mode) {
         window.getSelection().removeAllRanges();
-        var els = document.getElementsByClassName('clippy');
+        var els = Array.from(document.getElementsByClassName('clippy'));
         if (mode && mode=='enable') {
-            for (var X=0; X< els.length; X++) {
-                els[X].setAttribute("onClick", "$(this).contents().unwrap(); rmvClippy('chk')");
-            }
+            els.forEach (el => {
+                el.setAttribute("onClick", "$(this).contents().unwrap(); rmvClippy('chk')");
+            })
             clippyMgmtRmv.style.backgroundColor='red';
             clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
         }
@@ -57,9 +55,9 @@
     function rmvAllClippy() {
         var msg = 'ATTENZIONE!!!\nSei sicuro di voler eliminare Clippy in tutta la pagina?\nQuesta azione è irreveribile.'
         if (confirm(msg) == true) {
-            var els = document.getElementsByClassName('clippy');
+            var els = Array.from(document.getElementsByClassName('clippy'));
             var lng = els.length;
-            for (var Y=0; Y < lng; Y++) {$(els[0]).contents().unwrap()};
+            els.forEach (el => {$(el).contents().unwrap()});
             core();
         }
     }
@@ -70,24 +68,24 @@
         var mode='';
         if (els && els[lng] && els[lng].style.display=='none') { mode=''}
         if (els && els[lng] && !(els[lng].style.display=='none')) { mode='none'}
-        for (var X=0; X< els.length; X++) {els[X].style.display=mode}
+        for (var el of els) {el.style.display=mode}
     }
 
     function unstyled() {
-        var els = document.getElementsByClassName('clippy');
-        for (var X=0; X< els.length; X++) {
-            els[X].setAttribute("onClick", "");
-            els[X].style.color = ""
-            els[X].style.textDecoration = "";
-            els[X].style.cursor=''
-        }
+        var els = Array.from(document.getElementsByClassName('clippy'));
+        els.forEach (el => {
+            el.setAttribute("onClick", "");
+            el.style.color = ""
+            el.style.textDecoration = "";
+            el.style.cursor=''
+        })
     }
 
     //view mode function
     function clippy(text) {
         if (window.clippyIstnt != undefined) {return} else {window.clippyIstnt=1};
         var el = document.getElementById("clippyTextArea");
-        el.value = text.innerText.replace(/[\n]*$/gi,"").replace(/^[	]*/gi, '').replace(/[	]*$/gi, '');
+        el.value = text.innerText.replace(/([\n]*$|^[\n]*)/gi,"").replace(/(^[	]*|[	]*$)/gi, '').replace(/(^[ ]*|[ ]*$)/gi, '');
         el.select();
         document.execCommand('copy');
         window.getSelection().removeAllRanges();
@@ -97,7 +95,7 @@
     }
 
     function core() {
-        var els = document.getElementsByClassName('clippy');
+        var els = Array.from(document.getElementsByClassName('clippy'));
         if (editMode) {
             clippyMgmtTlt.setAttribute("onClick", "clippyMgmtSwitch();");
             if (els[0]) {
@@ -116,12 +114,12 @@
                 clippyMgmtAll.setAttribute("onClick", "");
             }
         }
-        for (var X=0; X< els.length; X++) {
-            els[X].setAttribute("onClick", "clippy(this);");
-                els[X].style.color = "#009ac3"
-                els[X].style.textDecoration = "underline";
-                els[X].style.cursor='pointer'
-        }
+        els.forEach (el => {
+            el.setAttribute("onClick", "clippy(this);");
+            el.style.color = "#009ac3"
+            el.style.textDecoration = "underline";
+            el.style.cursor='pointer'
+        })
     }
 
     //edit mode o //view mode?
@@ -140,7 +138,7 @@
             $(div).appendTo("body");
             $(".cssButtonContainer").css({"display": "block", "position": "fixed", "bottom": "20px", "left": "10px", "font-size": "5px", "padding": "20px","user-select":"none","text-align": "center"});
             $(".cssStyleButton").css({"font-size": "18px", "border": "none", "outline": "none", "background-color": "#C1C1C1", "color": "white"});
-            $(".cssButtonToTop").css({"display": "", "cursor": "", "padding": "5px","width":"60%", "margin":"0 auto"});
+            $(".cssButtonToTop").css({"padding": "5px","width":"60%", "margin":"0 auto"});
             $(".cssTiTleToTop").css({"width": "-moz-min-content", "cursor": "pointer", "padding": "5px", "background-color": "#0050FE", "color": "white"});
             window.clippyMgmtTlt=document.getElementById('clippyMgmtTlt');
             window.clippyMgmtAdd=document.getElementById('clippyMgmtAdd');
@@ -165,6 +163,14 @@
             });
         //edit Mode ended
         }
+        document.addEventListener("keydown", function (e) {
+            if (e.shiftKey && (e.key === 'C' || e.key === 'Z')) {
+                var el = document.getElementById("clippyTextArea");
+                el.value = window.getSelection().toString().replace(/([\n]*$|^[\n]*)/gi,"").replace(/(^[	]*|[	]*$)/gi, '').replace(/(^[ ]*|[ ]*$)/gi, '');
+                el.select();
+                document.execCommand('copy');
+            }
+        })
         var el = document.createElement('textarea');
         el.style.position = 'absolute';
         el.style.left = '-9999px';
@@ -183,14 +189,3 @@
 })();
 
 
-
-var s = document.getElementById('titleTable').style,
-        f = false,
-        c1 = '#000000',
-        c2 = '#ffffff';
-
-    setInterval(function() {
-        s.backgroundColor = f ? c1 : c2;
-        s.color = f ? c2 : c1;
-        f = !f;
-    }, 500);
