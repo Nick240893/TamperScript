@@ -48,8 +48,8 @@
         $(div).appendTo("body");
 		$(input).appendTo(div);
         $(input).focusout(function(){input.focus()});
-        $(".cssInputContainer").css({"display": "block", "position": "fixed", "bottom": "10px", "left": "3px", "font-size": "10px", "padding": "20px","user-select":"none"});
-        $("#myInputForSearch").css({"text-align": "", "width": "150px", "font-size": "20px"});
+        $(".cssInputContainer").css({"display": "block", "position": "fixed", "bottom": "10px", "left": "1px", "font-size": "10px", "padding": "20px","user-select":"none"});
+        $("#myInputForSearch").css({"text-align": "", "width": "166px", "font-size": "20px"});
         input.focus();
 	}
 
