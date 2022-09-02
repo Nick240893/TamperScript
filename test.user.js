@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Clippy
+// @name         ClippyDev
 // @namespace    http://tampermonkey.net/
 // @version      2.9
 // @description  try to take over the world!
