@@ -69,32 +69,30 @@
         }
     }
 
-    function clippyEdit(el) {
-        if (el.tagName=='SPAN') {
-            var txt = document.createElement('div');
-            txt.value = el.innerHTML;
+    function clippyEdit(el, arg) {
+        if (el.tagName=='SPAN' && !arg) {
+            var txt = document.createElement('TEXTAREA');
+            var div = document.createElement('div');
+            txt.value = el.innerText;
             txt.classList.add("clippyEdit");
-            el.parentNode.replaceChild(txt, el);
-            $(txt).focusout(function(){clippyEdit(txt)});
-            txt.setAttribute('type', 'text');
-            txt.setAttribute('contenteditable', true);
-            txt.setAttribute('onclick', 'event.stopPropagation(); this.focus()');
-            txt.addEventListener("keydown", function (e) {e.stopPropagation()});
-            txt.addEventListener("keypress", function (e) {e.stopPropagation()});
-            txt.addEventListener("keyup", function (e) {e.stopPropagation()});
-            txt.addEventListener("click", function (e) {e.stopPropagation()});
-            txt.addEventListener("focus", function (e) {e.stopPropagation()});
-            txt.addEventListener("change", function (e) {e.stopPropagation()});
-            txt.addEventListener("blur", function (e) {e.stopPropagation()});
-            txt.addEventListener("input", function (e) {e.stopPropagation()});
-            txt.addEventListener("mouseenter", function (e) {e.stopPropagation()});
-            $(txt).css({"word-break": "break-word", "width": "-moz-min-content", "border": '1px solid #000'});
+            $(txt).focusout(function(){});
+            $(txt).appendTo(div);
+            $(txt).css({"overflow": "hidden", 'max-width':'100%', 'resize':'both'});
+            el.parentNode.replaceChild(div, el);
+            $(txt).on('input', function() {
+                event.stopPropagation();
+                $(txt)
+                    .width (100)
+                    .height(20)
+                    .width (txt.scrollWidth)
+                    .height(txt.scrollHeight+20);
+            });
             //txt.onevent = function(e){e.stopPropagation()}
-        } else if (el.tagName=='TEXTAREA') {
+        } else if (el.tagName=='TEXTAREA' && !arg) {
             var sp = document.createElement('span');
-            sp.innerHTML = el.value;
+            sp.innerText = el.value;
             sp.classList.add("clippy");
-            el.parentNode.replaceChild(sp, el);
+            el.parentNode.parentNode.replaceChild(sp, el.parentNode);
             core();
         }
     };
@@ -111,9 +109,9 @@
         els.forEach (el => {
             if (el.tagName=='TEXTAREA') {
                 var sp = document.createElement('span');
-                sp.innerHTML = el.value;
+                sp.innerText = el.value;
                 sp.classList.add("clippy");
-                el.parentNode.replaceChild(sp, el);
+                el.parentNode.parentNode.replaceChild(sp, el.parentNode);
             };
          });
     };
