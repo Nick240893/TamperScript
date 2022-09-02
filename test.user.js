@@ -77,15 +77,13 @@
             txt.classList.add("clippyEdit");
             $(txt).focusout(function(){});
             $(txt).appendTo(div);
-            $(txt).css({"overflow": "hidden", 'max-width':'100%', 'resize':'both'});
+            $(txt).css({"overflow": "hidden", 'resize':'both'});
             el.parentNode.replaceChild(div, el);
             $(txt).on('input', function() {
                 event.stopPropagation();
-                $(txt)
-                    .width (100)
-                    .height(20)
-                    .width (txt.scrollWidth)
-                    .height(txt.scrollHeight+20);
+                    txt.cols=10
+                    txt.cols=txt.scrollWidth
+                console.log(txt.scrollWidth)
             });
             //txt.onevent = function(e){e.stopPropagation()}
         } else if (el.tagName=='TEXTAREA' && !arg) {
@@ -166,7 +164,7 @@
 
     //edit mode o //view mode?
     (function(){
-        window.editMode = document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
+        window.editMode = 'c' ; //document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
         if (editMode && !(document.getElementById("clippyMgmtTlt"))) {
         //edit Mode
             var div = document.createElement('div');
