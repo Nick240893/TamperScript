@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sharpoint SearchBar
 // @namespace    http://tampermonkey.net/
-// @version      2.6
+// @version      2.8
 // @description  try to take over the world!
 // @author       NigroN
 // @include      https://ts.accenture.com/*
@@ -47,10 +47,11 @@
 		input.oninput = () => {search(input.value)};
         $(div).appendTo("body");
 		$(input).appendTo(div);
-        $(input).focusout(function(){input.focus()});
+        $(input).focusout(function(){if (!(event.relatedTarget && event.relatedTarget.id=='ctl00_PlaceHolderSearchArea_ctl00_ctl00_SmallSearchInputBox1_csr_sbox')) {input.focus()}});
+        $('#ctl00_PlaceHolderSearchArea_ctl00_ctl00_SmallSearchInputBox1_csr_sbox').focusout(function(){input.focus()});
         $(".cssInputContainer").css({"display": "block", "position": "fixed", "bottom": "10px", "left": "1px", "font-size": "10px", "padding": "20px","user-select":"none"});
         $("#myInputForSearch").css({"text-align": "", "width": "166px", "font-size": "20px"});
         input.focus();
 	}
 
-})();
+})()
