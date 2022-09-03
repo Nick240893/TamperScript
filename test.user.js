@@ -40,11 +40,9 @@
 
     function rmvClippy(mode) {
         window.getSelection().removeAllRanges();
-        var els = Array.from(document.getElementsByClassName('clippy'));
+        var els = document.getElementsByClassName('clippy');
         if (mode && mode=='enable') {
-            els.forEach (el => {
-                el.setAttribute("onClick", "$(this).contents().unwrap(); rmvClippy('chk')");
-            });
+            for (var el of els) {el.setAttribute("onClick", "$(this).contents().unwrap(); rmvClippy('chk')")};
             clippyMgmtRmv.style.backgroundColor='red';
             clippyMgmtRmv.setAttribute("onClick", "rmvClippy('disable')");
         }
@@ -62,9 +60,9 @@
     function rmvAllClippy() {
         var msg = 'ATTENZIONE!!!\nSei sicuro di voler eliminare Clippy in tutta la pagina?\nQuesta azione è irreveribile.';
         if (confirm(msg) == true) {
-            var els = Array.from(document.getElementsByClassName('clippy'));
+            var els = document.getElementsByClassName('clippy');
             var lng = els.length;
-            els.forEach (el => {$(el).contents().unwrap()});
+            for (var el of els) {$(el).contents().unwrap()};
             core();
         }
     }
@@ -73,45 +71,31 @@
         if (el.tagName=='SPAN' && !arg) {
             var txt = document.createElement('TEXTAREA');
             var div = document.createElement('div');
+            $(div).css({'display':'Inline'});
             txt.value = el.innerText;
             txt.classList.add("clippyEdit");
-            $(txt).focusout(function(){});
+            $(txt).focusout(function(){clippyEdit(txt)});
+            txt.addEventListener('input', function(){clippyEdit(txt, 'grows')})
             $(txt).appendTo(div);
-            $(txt).css({"overflow": "hidden", 'resize':'both'});
+            $(txt).css({'font-family':'Lucida Console', 'font-weight':'500', "overflow":"hidden", 'resize':'none'});
             el.parentNode.replaceChild(div, el);
-            $(txt).on('input', function() {
-                event.stopPropagation();
-                    txt.cols=10
-                    txt.cols=txt.scrollWidth
-                console.log(txt.scrollWidth)
-            });
-            //txt.onevent = function(e){e.stopPropagation()}
+            clippyEdit(txt, 'grows');
+            txt.focus();
         } else if (el.tagName=='TEXTAREA' && !arg) {
             var sp = document.createElement('span');
             sp.innerText = el.value;
             sp.classList.add("clippy");
             el.parentNode.parentNode.replaceChild(sp, el.parentNode);
             core();
+        } else if (el.tagName=='TEXTAREA' && arg=='grows') {
+            el.style.width=''; el.cols=Math.max(...(el.value.split('/\r\n|\r|\n/').map(n=>{return n.length})));
+            el.style.height=''; el.rows=el.value.split(/\r\n|\r|\n/).length;
         }
     };
 
     function unstyled() {
-        var els = Array.from(document.getElementsByClassName('clippy'));
-        els.forEach (el => {
-            el.setAttribute("onClick", "");
-            el.style.color = "";
-            el.style.textDecoration = "";
-            el.style.cursor='';
-        });
-        els = Array.from(document.getElementsByClassName('clippyEdit'));
-        els.forEach (el => {
-            if (el.tagName=='TEXTAREA') {
-                var sp = document.createElement('span');
-                sp.innerText = el.value;
-                sp.classList.add("clippy");
-                el.parentNode.parentNode.replaceChild(sp, el.parentNode);
-            };
-         });
+        $('.clippy').removeAttr('onClick');
+        $('.clippy').removeAttr('style');
     };
 
     //view mode function
@@ -146,25 +130,19 @@
                 clippyMgmtAll.style.cursor=''
                 clippyMgmtAll.setAttribute("onClick", "");
             }
-            els.forEach (el => {
-                el.setAttribute("onClick", "clippyEdit(this);");
-                el.style.color = "#009ac3";
-                el.style.textDecoration = "underline";
-                el.style.cursor='pointer';
-            })
+            $('.clippy').attr('onClick', 'clippyEdit(this)');
+            $('.clippy').css({'color':'#009ac3', 'font-family':'monospace', 'cursor':'pointer'});
         } else {
             els.forEach (el => {
                 el.setAttribute("onClick", "clippy(this);");
-                el.style.color = "#009ac3";
-                el.style.textDecoration = "underline";
-                el.style.cursor='pointer';
+                $('.clippy').css({'color':'#009ac3', 'font-family':'monospace', 'cursor':'pointer'});
             })
         }
     }
 
     //edit mode o //view mode?
     (function(){
-        window.editMode = 'c' ; //document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
+        window.editMode = document.getElementById("ctl00_PlaceHolderMain_WikiField_ctl00_ctl00_TextField_inplacerte_layoutsTable");
         if (editMode && !(document.getElementById("clippyMgmtTlt"))) {
         //edit Mode
             var div = document.createElement('div');
@@ -190,8 +168,9 @@
             sve.setAttribute('onclick', '(async function(){await unstyled();'+cmd+'})()')
             //select
             document.addEventListener("selectionchange", () => {
-                var tmp=document.getSelection().toString();
-                if (tmp) {
+                var tmp=''; var tagName='TEXTAREA';
+                try {tmp=document.getSelection(); tagName=tmp.getRangeAt(0).startContainer.children[0].tagName } catch {return}
+                if (tmp.toString() && !(tagName=='TEXTAREA')) {
                     clippyMgmtAdd.style.backgroundColor='#0050FE'
                     clippyMgmtAdd.style.cursor='pointer'
                     clippyMgmtAdd.setAttribute("onClick", "addClippy()");
@@ -215,6 +194,7 @@
         el.style.position = 'absolute';
         el.style.left = '-9999px';
         el.id = 'clippyTextArea'
+        $('.clippy').css({'font-family':'Lucida Console', 'font-weight':'800'});
         document.body.appendChild(el);
         window.core=core;
         window.clippy=clippy;
