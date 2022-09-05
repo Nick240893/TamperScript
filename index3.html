@@ -94,11 +94,11 @@ text-align: center;
 
 .cssCalBtn {
 vertical-align: top;
-display:fl;
+display:inline-block;
 }
-.cssCalBck{ display: flex; padding: 30px 0px; margin-left: auto;}
-.cssCalImg{padding: 5px 0px;vertical-align: top;margin-left: 1;}
-.cssCalTxt{ margin-right: auto;}
+.cssCalBck{padding: 30px 0px;}
+.cssCalImg{padding: 5px 0px;vertical-align: top;}
+.cssCalTxt{display:inline-block}
 
 
 .cssBrdAll2 {border: 2px solid #191970;}
@@ -172,17 +172,17 @@ display:fl;
 
 
 <div class="cssCalCont">
-    <!--div class="cssCalDiv cssBrdAll2"-->
-        <div class="cssCalBck cssBrdAll2">
+    <div class="cssCalDiv cssBrdAll2">
+        <div class="cssCalBck">
             <i class="fa fa-backward" title="Indietro di un giorno"></i>&nbsp;
         </div>
-        <div class="cssCalImg cssBrdAll2">
+        <div class="cssCalImg">
             <i class="fa fa-calendar" style="font-size: 20px;" title="Calendario"></i>&nbsp;
         </div>
-        <div class="cssCalText cssBrdAll2">
+        <div class="cssCalText">
             <span class="">OGGI</span>
         </div>
-    <!--/div-->
+    </div>
     <div class="cssCalBtn">
         <i class="fa fa-cog"></i>
     </div>
