@@ -137,7 +137,7 @@ border-collapse: collapse
 .cssChkLstTbl tr {
 
 }
-.cssChkLstTbl td {
+.cssChkLstTbl td div {
 min-width: -moz-min-content;
 overflow: hidden;
 text-overflow: ellipsis;
@@ -171,6 +171,29 @@ border-right: 2px solid #191970;
 .cssChkLstTblOpt {width: -moz-min-content;
 white-space: nowrap;}
 
+
+table {
+  width: 100%;   // This can be set to whatever.
+}
+
+td div {
+  max-height: 1.1em;
+  overflow: hidden;
+  position: relative;
+  color: transparent;
+}
+
+td div::after {
+  content: attr(title);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 
 
 .fa{cursor: pointer;}
