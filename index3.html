@@ -129,21 +129,17 @@ margin-right: auto;
 display: flex;
 border: 4px solid #191970;
 font-size: 27px;
-overflow: hidden;
-text-overflow: ellipsis;
 }
-
-
-
 .cssChkLstTbl{
 width: 100%;
 border-collapse: collapse
 overflow: hidden;
 text-overflow: ellipsis;
 }
-.cssChkLstTbl div {
+.cssChkLstTbl tr {
 overflow: hidden;
 text-overflow: ellipsis;
+position: relative;
 }
 .cssChkLstTbl td {
 overflow: hidden;
@@ -273,20 +269,22 @@ border-right: 2px solid #191970;
 </div>
 
 <div class="cssChkLstCont">
-
-            <div class="cssChkLstTblClk">
+    <table class="cssChkLstTbl">
+        <tr class="cssChkLstTblTr">
+            <td class="cssChkLstTblClk">
                 09:00
-            </div>
-            <div class="cssChkLstTblNam">
+            </td>
+            <td class="cssChkLstTblNam">
                 [Client Name] Check name for tesjvufufufugfujcjcicicicificicixixififififififififif
-            </div>
-            <div class="cssChkLstTblLnk">
+            </td>
+            <td class="cssChkLstTblLnk">
                 Sharepoint, oldtrack, otherSite
-            </div>
-            <div class="cssChkLstTblOpt">
+            </td>
+            <td class="cssChkLstTblOpt">
                 hide
-            </div>
-
+            </td>
+        </tr>
+    </table>
 </div>
 
 <script>$("#p2CalSlc").selectmenu({width:'auto'});</script>
