@@ -7,16 +7,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=0.7" charset="UTF-8">
 
 <style>
-.cssMainCont {display: flex;}
+.cssMainCont {
+display: flex;
+background-image: linear-gradient(#4983ff, #87CEEB);
+border-top: 4px solid #191970;
+border-left: 4px solid #191970;
+}
 
 .cssMainTab {
 display:flex;
 width:100%;
-background-image: linear-gradient(#4983ff, #87CEEB);
 font-size: 22px;
 color: white;
 overflow: hidden;
 text-overflow: ellipsis;
+border-right: 4px solid #191970;
 }
 
 .cssMainTxt {
@@ -31,6 +36,7 @@ margin-right: auto;
 .cssMainBtn {
 display:inline-block;
 vertical-align: top;
+padding: 2px 2px;
 }
 
 .cssMainSubTxt {
@@ -60,6 +66,7 @@ color: white;
 
 .cssClkTxt {
 margin-left: auto;
+margin-right: auto;
 overflow: hidden;
 text-overflow: ellipsis;
 padding: 30px 0px;
@@ -69,7 +76,7 @@ text-align: center;
 .cssClkBtn {
 vertical-align: top;
 display:inline;
-margin-right: auto;
+padding: 2px 2px;
 }
 
 .cssCalCont {
@@ -81,7 +88,6 @@ font-size: 27px;
 background-color: #0050FE;
 color: white;
 }
-
 .cssCalDiv {
 display: flex;
 margin-left: auto;
@@ -91,18 +97,8 @@ text-overflow: ellipsis;
 padding: 0px 0px;
 text-align: center;
 }
-
-.cssCalBtn {
-vertical-align: top;
-display:inline-block;
-overflow: hidden;
-text-overflow: ellipsis;
-font-size:25px;
-padding: 10px 0px;
-}
 .cssCalBck{padding: 30px 0px;}
-.cssCalImg{padding: 10px 0px; 
-}
+.cssCalImg{padding: 10px 0px;}
 .cssCalTxt{
 padding: 30px 0px;
 overflow: hidden;
@@ -112,7 +108,42 @@ padding: 30px 0px;
 text-align: center;
 font-size: 15px;
 }
+.cssCalBtn {
+vertical-align: top;
+display:inline-block;
+overflow: hidden;
+text-overflow: ellipsis;
+font-size:27px;
+padding: 2px 2px;
+}
 
+
+.cssChkCont{
+display: flex;
+border-top: 4px solid #191970;
+border-left: 4px solid #191970;
+font-size: 27px;
+background-image: linear-gradient(#4983ff, #87CEEB);
+color: white;
+}
+.cssChkTab {
+display:flex;
+width:100%;
+font-size: 22px;
+color: white;
+overflow: hidden;
+text-overflow: ellipsis;
+border-right: 4px solid #191970;
+}
+
+.cssChkTxt{
+display:inline-block;
+overflow: hidden;
+text-overflow: ellipsis;
+padding: 15px;
+margin-left: auto;
+margin-right: auto;
+}
 
 
 .cssBrdAll2 {border: 2px solid #191970;}
@@ -129,7 +160,7 @@ font-size: 15px;
 </style>
 
 <div class="cssMainCont">
-    <div class='sysMainTab cssMainTab cssMainBrd cssBrdLft4'>
+    <div class='sysMainTab cssMainTab'>
         <div class="cssMainTxt">
             Hutchison
         </div>
@@ -137,7 +168,7 @@ font-size: 15px;
             <i class="fa fa-cog"></i>
         </div>
     </div>
-    <div class='sysMainTab cssMainTab cssMainBrd'>
+    <div class='sysMainTab cssMainTab'>
         <div class="cssMainTxt">
             CheckApp
         </div>
@@ -145,7 +176,7 @@ font-size: 15px;
             <i class="fa fa-cog"></i>
         </div>
     </div>
-    <div class='sysMainTab cssMainTab cssMainBrd'>
+    <div class='sysMainTab cssMainTab'>
         <div class="cssMainTxt">
             Tools
         </div>
@@ -201,19 +232,36 @@ font-size: 15px;
                 <option value="1">T1</option>
                 <option value="2">T2</option>
                 <option value="3">T3</option>
-            </select>&nbsp;
-        </div>
-        <div class="cssCalBtn">
-            <i class="fa fa-cog"></i>
-        </div> &nbsp;&nbsp;&nbsp;
+            </select>
+        </div>&nbsp;&nbsp;&nbsp;
         <div class="cssCalBck">
             <i class="fa fa-forward" title="Avanti di un giorno"></i>&nbsp;
         </div>
     </div>
+    <div class="cssCalBtn">
+        <i class="fa fa-cog"></i>
+    </div> 
 </div>
 
-<div class="">
-    
+<div class="cssChkCont">
+    <div class="cssChkTab">
+        <div class="cssChkTxt">
+            Maintenance
+        </div>
+        <i class="fa fa-cog cssChkBtn"></i>
+    </div>
+    <div class="cssChkTab">
+        <div class="cssChkTxt">
+            Check
+        </div>
+        <i class="fa fa-cog cssChkBtn"></i>
+    </div>
+    <div class="cssChkTab">
+        <div class="cssChkTxt">
+            Tools
+        </div>
+        <i class="fa fa-cog cssChkBtn"></i>
+    </div>
 </div>
 
 
