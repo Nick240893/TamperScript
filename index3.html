@@ -133,24 +133,17 @@ font-size: 27px;
 
 
 table {
-  width: 100%;   // This can be set to whatever.
+  width: 100%;
 }
 
-td span{
-max-height: 1.1em;
-  
-  top: 0;
-  left: 0;
-  right: 0;
+div.parent {
+  display: flex;
 }
 
-td div {
-  max-height: 1.1em;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  right: 0;
-  white-space: nowrap;
+div.child {
+  flex: 1;
+  width: 1px;
+  overflow-x: hidden;
   text-overflow: ellipsis;
 }
 
@@ -266,7 +259,8 @@ td div {
                 <span>09:00</span>
             </td>
             <td class="cssChkLstTblNam">
-                <div>
+                <div class="parent">
+                    <div class="child">
                     [Client Name] Check name for tesj vufufufugfu jcjcic icici ficicixixi fifififififififif
                 </div>
             </td>
