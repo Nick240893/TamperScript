@@ -136,18 +136,15 @@ table {
   width: 100%;   // This can be set to whatever.
 }
 
-td {border-right: 4px solid #191970;}
+td {
+top: 0;
+  left: 0;
+  right: 0;
+    border-right: 4px solid #191970;}
 
 td div {
   max-height: 1.1em;
   overflow: hidden;
-  position: relative;
-  
-}
-
-td div::after {
-  content: attr(title);
-  position: absolute;
   top: 0;
   left: 0;
   right: 0;
