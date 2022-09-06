@@ -130,46 +130,6 @@ display: flex;
 border: 4px solid #191970;
 font-size: 27px;
 }
-.cssChkLstTbl{
-width: 100%;
-border-collapse: collapse
-}
-.cssChkLstTbl tr {
-
-}
-.cssChkLstTbl td div {
-min-width: -moz-min-content;
-overflow: hidden;
-text-overflow: ellipsis;
-padding: 10;
-vertical-align: middle;
-}
-
-.cssChkLstTblClk {
-border-right: 2px solid #191970;
-width: -moz-min-content;
-white-space: nowrap;
-}
-.cssChkLstTblNam {
-border-right: 2px solid #191970;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-}
-.cssChkLstTblNam div {
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
-}
-
-
-.cssChkLstTblLnk {
-width: 100%;
-white-space: normal;
-border-right: 2px solid #191970;
-}
-.cssChkLstTblOpt {width: -moz-min-content;
-white-space: nowrap;}
 
 
 table {
@@ -184,12 +144,11 @@ td div {
 }
 
 td div::after {
-  content: attr(title);
+  
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  color: black;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
