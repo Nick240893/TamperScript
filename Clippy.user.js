@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Clippy
 // @namespace    http://tampermonkey.net/
-// @version      3.1
+// @version      3.2
 // @description  try to take over the world!
 // @author       NigroN
 // @match        https://ts.accenture.com/*
@@ -107,9 +107,7 @@
                 $('#clippyMgmtAll').removeAttr('onClick');
                 $('.cssStyleRmvClippy').css({"background-color":"#C1C1C1",'color':'white', "cursor":""});
             }
-            $('.clippy').attr('onClick', 'clippyEdit(this)');
-            $('.clippy').attr('contenteditable', 'false');
-            $('.clippy').attr('unselectable', 'on');
+            $('.clippy').attr({'contenteditable':'false','unselectable':'on','onClick':'clippyEdit(this)'});
             $('.clippy').css({'color':'#009ac3', 'font-family':'monospace', 'cursor':'pointer'});
         } else {
             $('.clippy').attr('onClick', 'clippy(this)');
