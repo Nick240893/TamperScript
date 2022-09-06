@@ -132,21 +132,26 @@ font-size: 27px;
 }
 
 
-.cssChkLstTbl {
+table {
   width: 100%;   // This can be set to whatever.
 }
 
-tr {
-}
-.cssChkLstTbl td {
-padding: 15px;
+td div {
+  max-height: 1.1em;
+  overflow: hidden;
+  position: relative;
 }
 
-.cssChkLstTbl td div {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+td div::after {
+  content: attr(title);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   color: black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 
