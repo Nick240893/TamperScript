@@ -344,14 +344,14 @@ text-overflow: ellipsis;
      };
      
      if ((sizeFixLnk+sizeFixChk)>(sizeContro2)) {
-         if ((sizeFixChk>sizeControl) && (sizeFixLnk>sizeContro2)) {
+         if ((sizeFixChk>sizeControl) && (sizeFixLnk>sizeControl)) {
              $('.cssChkLstTblNam').css({'width': ''});
              $('.cssChkLstTblLnk').css({'width': ''});
              console.log('maggiore 1');
-         } else if ((sizeFixChk>sizeControl) && (sizeFixLnk<sizeControl)) {
+         } else if ((sizeFixChk>sizeControl) && (sizeFixLnk<(sizeControl-(sizeControl/4)) )) {
              $('.cssChkLstTblLnk').css({'width': sizeFixLnk+1});
              console.log('maggiore 2');
-         } else if ((sizeFixLnk>sizeControl) && (sizeFixChk<(sizeControl-(sizeControl/4)))) {
+         } else if ((sizeFixLnk>sizeControl) && (sizeFixChk>(sizeControl-(sizeControl/4)) )) {
              $('.cssChkLstTblNam').css({'width': sizeFixChk+1});
              console.log('maggiore 3');
          } else {
