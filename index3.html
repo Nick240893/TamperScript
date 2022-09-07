@@ -311,15 +311,13 @@ text-overflow: ellipsis;
 </div>
 </div>
 
-<input type="text" id="datepicker"></input>
+<input style='display:none' type="text" id="datepicker"></input>
  
 
 <script>
 
 
     $( "#datepicker" ).datepicker({
-    
-    
 	 showButtonPanel: true,
 	 showOtherMonths: false,
 	 selectOtherMonths: true,
@@ -340,8 +338,6 @@ text-overflow: ellipsis;
 	 firstDay: 1,
 	 currentText: 'Oggi',
 	 buttonImageOnly: true,
-	 
-    
     });
 
 $('#datepicker').datepicker('show')
