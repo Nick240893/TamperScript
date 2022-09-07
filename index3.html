@@ -316,8 +316,8 @@ text-overflow: ellipsis;
      $('.cssChkLstTblClk').css({'width': width})
      var width=$('.txt2').width();
      $('.cssChkLstTblOpt').css({'width': width})
-     var width=$('.txt3').width();
-     //var widts=Math.max($(".child").map(function(){ return parseInt($(this).width()) }).get());
+     var width=Math.max($(".txt3").map(function(){ return parseInt($(this).width()) }).get());
+     var widts=Math.max($(".child").map(function(){ return parseInt($(this).width()) }).get());
      var widtx=$('.cssChkLstTblNam').width();
      
      
