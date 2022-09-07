@@ -276,7 +276,7 @@ text-overflow: ellipsis;
             </td>
             <td class="cssChkLstTblNam">
                 <span class="child">
-                    [Client Name] Cficicixixi dydududjdjdjdjdjdkdjdkdkdkdifidififidididifkfififididifififififififififidididididididifididifif
+                    [Client Name] Cficicixixi 
                 </span>
             </td>
             <td class="cssChkLstTblLnk">
@@ -291,9 +291,9 @@ text-overflow: ellipsis;
                 <span>09:00</span>
             </td>
             <td class="cssChkLstTblNam">
-                <div class="child">
+                <span class="child">
                     [Client Name] Check name for tesj
-                </div>
+                </span>
             </td>
             <td class="cssChkLstTblLnk">
                 <div>Sharepoint, oldtrack, otherSite</div>
@@ -320,9 +320,9 @@ text-overflow: ellipsis;
      var widts=$('.child').width();
      var widtx=$('.cssChkLstTblNam').width();
      
-     ((width+widts)<widtx) ? $('.cssChkLstTblNam').css({'width': widts}) : null;
+     ((width+widts)<(widtx*2)) ? $('.cssChkLstTblNam').css({'width': widts}) : null;
      
-     if ((width+widts)>widtx) {
+     if ((width+widts)>(widtx*2)) {
          if (widts < ((widtx*2)+1) && width > ((widtx*2)+1) ) {
             $('.cssChkLstTblNam').css({'width': widts})
          }
