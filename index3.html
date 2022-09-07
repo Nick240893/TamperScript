@@ -152,6 +152,8 @@ border: 4px solid #191970;
 padding: 10px;
 }
 
+
+
 .cssChkLstTblNam {
 white-space: nowrap;
 overflow: hidden;
@@ -272,34 +274,46 @@ text-overflow: ellipsis;
     <table class="cssChkLstTbl" id="p2ChkLstTbl">
         <tr>
             <td class="cssChkLstTblClk">
-                <span class="txt">09:00</span>
+                <span class="sizeFixClock">
+                    09:00
+                </span>
             </td>
             <td class="cssChkLstTblNam">
-                <span class="child">
-                    [Client Name] Cficicixixi 
+                <span class="sizeFixCheck">
+                    [Client Name] jcjfjfififufufififjfkfkffjcjcjdjfjfjfjfjfchfjcjcjfjfjfiufufufjfufjcjcjckfkgk 
                 </span>
             </td>
             <td class="cssChkLstTblLnk">
-                <span class="txt3">Sharepoint, oldtrack, otherSite</span>
+                <span class="sizeFixLink">
+                    Sharepoint
+                </span>
             </td>
             <td class="cssChkLstTblOpt">
-                <span>hide</span>
+                <span class="sizeFixOpt">
+                    hide
+                </span>
             </td>
         </tr>
         <tr class="cssChkLstTblTr">
             <td class="cssChkLstTblClk">
-                <span>09:00</span>
+                <span class="sizeFixClock">
+                    09:00
+                </span>
             </td>
             <td class="cssChkLstTblNam">
-                <span class="child">
-                    [Client Name] Check name for tesjhdjdjjdjdjjdndjfjjjdjfjfjjfjfjfdjfjf
+                <span class="sizeFixCheck">
+                    [Client Name] Cficicixixi 
                 </span>
             </td>
             <td class="cssChkLstTblLnk">
-                <div>Sharepoint, oldtrack, otherSite</div>
+                <span class="sizeFixLink">
+                    Sharepoint
+                </span>
             </td>
             <td class="cssChkLstTblOpt">
-                <span class="txt2">hide</span>
+                <span class="sizeFixOpt">
+                    hide
+                </span>
             </td>
         </tr>
     </table>
@@ -312,36 +326,46 @@ text-overflow: ellipsis;
     //$('.child').css({'display': ''});
     
    //  ($('.child').width() > width) ? $('.child').css({'max-width': width}) : null ;
-     var width=$('.txt').width();
+     var width=Math.max.apply(null, $(".sizeFixClock").map(function(){ return parseInt($(this).width()) }).get());
      $('.cssChkLstTblClk').css({'width': width})
-     var width=$('.txt2').width();
+     console.log(width)
+     var width=Math.max.apply(null, $(".sizeFixOpt").map(function(){ return parseInt($(this).width()) }).get());
      $('.cssChkLstTblOpt').css({'width': width})
-     var width=Math.max($(".txt3").map(function(){ return parseInt($(this).width()) }).get());
-     var widts=Math.max($(".child").map(function(){ return parseInt($(this).width()) }).get());
-     var widtx=$('.cssChkLstTblNam').width();
+     console.log(width)
+     
+     var sizeFixChk = Math.max.apply(null, $(".sizeFixCheck").map(function(){ return parseInt($(this).width()) }).get());
+     var sizeFixLnk = Math.max.apply(null, $(".sizeFixLink").map(function(){ return parseInt($(this).width()) }).get());
+     var sizeControl= Math.max.apply(null, $(".cssChkLstTblNam").map(function(){ return parseInt($(this).width()) }).get());
+     var sizeContro2= Math.round((sizeControl+1)*2);
      
      
+     console.log('Link: '+sizeFixLnk);
+     console.log(' Chk: '+sizeFixChk);
+     console.log('plus: '+sizeControl);
+     console.log('pls2: '+(sizeControl*2));
      
-     if ((width+widts)<((widtx*2)+1)) {
-         $('.cssChkLstTblNam').css({'width': widts}) 
-         console.log('minore')
+     if ((sizeFixLnk+sizeFixChk)<(sizeContro2+1)) {
+         $('.cssChkLstTblNam').css({'width': sizeFixChk+1});
+         
+         console.log('minore');
      };
      
-     if ((width+widts)>(widtx*2)) {
-         if (widts < ((widtx*2)+1) && width > ((widtx*2)+1) ) {
-            $('.cssChkLstTblNam').css({'width': widts})
-            console.log('maggiore 1')
-            
-         }
-         if (width < (widtx+1)) {
-           $('.cssChkLstTblLnk').css({'width': width})
-           console.log((width+widts)<(widtx*2));
-           console.log('maggiore 2')
+     if ((sizeFixLnk+sizeFixChk)>(sizeContro2)) {
+         if ((sizeFixChk>sizeControl) && (sizeFixLnk>sizeContro2)) {
+             $('.cssChkLstTblNam').css({'width': ''});
+             $('.cssChkLstTblLnk').css({'width': ''});
+             console.log('maggiore 1');
+         } else if ((sizeFixChk>sizeControl) && (sizeFixLnk<sizeControl)) {
+             $('.cssChkLstTblLnk').css({'width': sizeFixLnk+1});
+             console.log('maggiore 2');
+         } else if ((sizeFixLnk>sizeControl) && (sizeFixChk<sizeControl)) {
+             $('.cssChkLstTblNam').css({'width': sizeFixChk+1});
+             console.log('maggiore 3');
+         } else {
+             $('.cssChkLstTblNam').css({'width': ''});
+             $('.cssChkLstTblLnk').css({'width': ''});
+             console.log('maggiore 4');
          }
      }
-         //((width+widts)>(widtx+1)) ? $('.cssChkLstTblNam').css({'width': widts}) : null;
-     //((width+widts)<widtx) ? $('.cssChkLstTblNam').css({'width': widts}) : null;
-     
-
      
 </script>
