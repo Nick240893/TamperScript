@@ -321,8 +321,8 @@ text-overflow: ellipsis;
          if (widts < (widtx+1) && width > (widtx+1) ) {
             $('.cssChkLstTblNam').css({'width': widts})
          }
-         if (widts > (widtx+1)) {
-           $('.cssChkLstTblLnk').css({'width': width})
+         if (widts > (widtx+1) && width < (widtx+1)) {
+           //$('.cssChkLstTblLnk').css({'width': width})
          }
      }
      
