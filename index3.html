@@ -310,7 +310,7 @@ text-overflow: ellipsis;
     $("#p2CalSlc").selectmenu({width:'auto'});
     
     //$('.child').css({'display': ''});
-    console.log(Math.max(...(document.getElementsByClassName('child').map(n=>(return n.offsetWidth)))))
+    console.log(Math.max(...(document.getElementsByClassName('child').map(n=>{return n.offsetWidth}))))
 
    //  ($('.child').width() > width) ? $('.child').css({'max-width': width}) : null ;
      var width=$('.txt').width();
