@@ -260,7 +260,7 @@ text-overflow: ellipsis;
     <table class="cssChkLstTbl">
         <tr class="cssChkLstTblTr">
             <td class="cssChkLstTblClk">
-                <span>09:00</span>
+                <span class="txt">09:00</span>
             </td>
             <td class="cssChkLstTblNam">
                 <span class="child" style="display:">
@@ -296,11 +296,11 @@ text-overflow: ellipsis;
 </div>
 <script>
     $("#p2CalSlc").selectmenu({width:'auto'});
-    //var width=$('.cssChkLstTblNam').width();
+    var width=$('.txt').width();
     //$('.child').css({'display': ''});
     
    //  ($('.child').width() > width) ? $('.child').css({'max-width': width}) : null ;
      
-     $('.child').css({'max-width': width})
+     $('.cssChkLstTblClk').css({'width': width})
      
 </script>
