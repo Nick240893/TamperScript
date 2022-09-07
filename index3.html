@@ -317,7 +317,7 @@ text-overflow: ellipsis;
      var width=$('.txt2').width();
      $('.cssChkLstTblOpt').css({'width': width})
      var width=$('.txt3').width();
-     var widts=Mat
+     var widts=''
      var widtx=$('.cssChkLstTblNam').width();
      
      
@@ -342,6 +342,7 @@ console.log(Math.max.apply(null, dataList));
      //((width+widts)>(widtx+1)) ? $('.cssChkLstTblNam').css({'width': widts}) : null;
      //((width+widts)<widtx) ? $('.cssChkLstTblNam').css({'width': widts}) : null;
      
+Math.max($(".child").map(function(){ return parseInt($(this).width()) }).get();)
 
      
 </script>
