@@ -144,7 +144,7 @@ font-size: 27px;
 
 
 .cssChkLstTblNam span{
- display: none;
+ 
 }
 
 
@@ -277,7 +277,7 @@ font-size: 27px;
                 <span>09:00</span>
             </td>
             <td class="cssChkLstTblNam">
-                <span class="parent">
+                <span class="parent" style="display:none">
                     [Client Name] Check name for tesj vufufufugfu jcjcic icici ficicixixi fifitttrrtrttfifififififif
                 </span>
             </td>
@@ -293,7 +293,7 @@ font-size: 27px;
                 <span>09:00</span>
             </td>
             <td class="cssChkLstTblNam">
-                <span class="parent">
+                <span class="parent" style="display:none">
                     [Client Name] Check name for tesj
                 </span>
             </td>
@@ -309,5 +309,7 @@ font-size: 27px;
 </div>
 <script>
     $("#p2CalSlc").selectmenu({width:'auto'});
-    
+    var width=$('.cssChkLstTblNam').width()
+     $('.cssChkLstTblNam7').css({'width': wihth , 'display':''});
+
 </script>
