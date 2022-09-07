@@ -316,9 +316,36 @@ text-overflow: ellipsis;
 
 <script>
 
-$( function() {
-    $( "#datepicker" ).datepicker();
-  } );
+
+    $( "#datepicker" ).datepicker({
+    
+    
+	 showButtonPanel: true,
+	 showOtherMonths: false,
+	 selectOtherMonths: true,
+	 showButtonPanel: true,
+	 dateFormat: 'yy-mm-dd',
+	 changeMonth: true,
+	 changeYear: true,
+	 monthNamesShort: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+	 monthNames: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+	 dayNames: ['Domenica','Lunedí', 'Martedí', 'Mercoledí', 'Giovedí', 'Venerdí', 'Sabato'],
+	 dayNamesShort: ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
+	 dayNamesMin: ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
+	 weekHeader: 'GdS',
+	 closeText: 'Chiudi',
+	 prevText: "Indietro",
+	 nextText: "Avanti",
+	 showWeek: false,
+	 firstDay: 1,
+	 currentText: 'Oggi',
+	 buttonImageOnly: true,
+	 
+    
+    });
+
+('#p2CalendarDatePicker').datepicker('show')
+
 
 
 
