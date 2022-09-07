@@ -318,11 +318,11 @@ text-overflow: ellipsis;
      $('.cssChkLstTblOpt').css({'width': width})
      var width=$('.txt3').width();
      var widts=$('.child').width();
-     var widtx=~~$('.cssChkLstTblNam').width();
+     var widtx=$('.cssChkLstTblNam').width();
      
      
      
-     if ((width+widts)<(widtx*2)) {
+     if ((width+widts)<((widtx*2)+1)) {
          $('.cssChkLstTblNam').css({'width': widts}) 
          console.log((widts)+' '+(widtx*2));
      };
