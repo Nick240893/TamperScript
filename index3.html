@@ -330,9 +330,11 @@ text-overflow: ellipsis;
      if ((width+widts)>(widtx*2)) {
          if (widts < ((widtx*2)+1) && width > ((widtx*2)+1) ) {
             $('.cssChkLstTblNam').css({'width': widts})
+            console.log((widts)<(widtx*2));
          }
          if (width < (widtx+1)) {
            $('.cssChkLstTblLnk').css({'width': width})
+           console.log((width+widts)<(widtx*2));
          }
      }
      
