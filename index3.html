@@ -313,16 +313,16 @@ text-overflow: ellipsis;
      $('.cssChkLstTblOpt').css({'width': width})
      var width=$('.txt3').width();
      var widts=$('.child').width();
-     var widtx=$('.cssChkLstTblNam').width()*2;
+     var widtx=$('.cssChkLstTblNam').width();
      
      ((width+widts)<widtx) ? $('.cssChkLstTblNam').css({'width': widts}) : null;
      
      if ((width+widts)>widtx) {
-         if (widts < (widtx+1) && width > (widtx+1) ) {
+         if (widts < (widtx*2)+1) && width > (widtx+1) ) {
             $('.cssChkLstTblNam').css({'width': widts})
          }
          if (widts > (widtx+1) && width < (widtx+1)) {
-           $('.cssChkLstTblLnk').css({'width': width})
+           //$('.cssChkLstTblLnk').css({'width': width})
          }
      }
      
