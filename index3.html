@@ -322,8 +322,10 @@ font-size: 27px;
 </div>
 <script>
     $("#p2CalSlc").selectmenu({width:'auto'});
-    var width=$('.cssChkLstTblNam').width()
+    var width=$('.cssChkLstTblNam').width();
     
-     $('.parent').css({ 'display':''});
+     () ? $('.parent').css({'max-width': width}); : null
+     $('.parent').css({'display': ''})
+     
      
 </script>
