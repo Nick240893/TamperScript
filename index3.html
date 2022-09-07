@@ -310,8 +310,7 @@ text-overflow: ellipsis;
     $("#p2CalSlc").selectmenu({width:'auto'});
     
     //$('.child').css({'display': ''});
-    console.log(Math.max(...(document.getElementsByClassName('child').map(n=>{return n.offsetWidth}))))
-
+    
    //  ($('.child').width() > width) ? $('.child').css({'max-width': width}) : null ;
      var width=$('.txt').width();
      $('.cssChkLstTblClk').css({'width': width})
@@ -338,7 +337,9 @@ text-overflow: ellipsis;
            console.log((width+widts)<(widtx*2));
          }
      }
-     
+     var dataList = $(".child").map(function() {return parseInt($(this).width());
+}).get();
+console.log(Math.max.apply(null, dataList));
      //((width+widts)>(widtx+1)) ? $('.cssChkLstTblNam').css({'width': widts}) : null;
      //((width+widts)<widtx) ? $('.cssChkLstTblNam').css({'width': widts}) : null;
      
