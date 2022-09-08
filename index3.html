@@ -375,11 +375,10 @@ function jsMainTabSwc(el, className, page) {
     if (event.target == el) {$('.sysMainSubTabs').css('display','none')}
     $('.sysPages').css('display','none');
     $('#sysPage'+page).css('display','');
-    
+    console.log(event.target)
 }
 
 function jsMainOptSwc(el, id) {
-    
     $('#sysOptPage'+id).css('display',($('#sysOptPage'+id).css('display')=='none') ? '' : 'none');
 }
 
