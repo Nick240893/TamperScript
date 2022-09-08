@@ -408,11 +408,11 @@ function jsP2Clock() {
     var hour = ('0'+now.getHours()).slice(-2);
     var minute = ('0'+now.getMinutes()).slice(-2); 
     var second = ('0'+now.getSeconds()).slice(-2);
-    $('#sysClockText').text(weeks[week]+' '+day+'/'month+'/'+year+' '+hour+':'+minute+':'+second);
+    $('#sysClockText').html(week+' '+day+'/'+month+'/'+year+' '+hour+':'+minute+':'+second);
     
 }
 
-
+jsP2Clock()
 
 var weeks = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato']; 
 
