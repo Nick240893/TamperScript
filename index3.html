@@ -373,12 +373,7 @@ function jsMainTabSwc(el, className) {
 function jsMainOptSwc(el, id) {
     //event.stopPropagation();
    // jsMainTabSwc(el.parentNode.parentNode, className)
-    $('#'+id).css('display',($('#'+id).css('display')=='none') ?''
-'')
-    } else {
-        $('#'+id).css('display','none');
-    }
-    
+    $('#'+id).css('display',($('#'+id).css('display')=='none') ? '' : 'none')
 }
 
 
