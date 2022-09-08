@@ -205,9 +205,9 @@ visibility: hidden;
         <span class="cssMainTxt">
             CheckApp
         </span>
-        <span><i class="fa fa-cog" onclick="jsMainOptSwc(this,'sysMainTab')"></i></span>
+        <span><i class="fa fa-cog" onclick="jsMainOptSwc(this,'sysOptPage2')"></i></span>
     </div>
-    <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysOptPage2')">
+    <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainTab')">
         <span class="cssMainTxt">
             Tools
         </span>
@@ -373,8 +373,8 @@ function jsMainTabSwc(el, className) {
 function jsMainOptSwc(el, id) {
     //event.stopPropagation();
    // jsMainTabSwc(el.parentNode.parentNode, className)
-    if ($('#'+id).css('display')=='none') {
-        $('#'+id).css('display','')
+    $('#'+id).css('display',($('#'+id).css('display')=='none') ?''
+'')
     } else {
         $('#'+id).css('display','none');
     }
