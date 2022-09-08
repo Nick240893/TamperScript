@@ -366,13 +366,12 @@ visibility: hidden;
 
 
 <script>
-$('#sysMainTabDefalt').click()
 
 function jsMainTabSwc(el, className, page) {
     $('.'+className).css('background-image','');
     $(el).css('background-image','linear-gradient(#0000CD,#00BFFF)');
     if (!page) {return};
-    if (event.target == el) {$('.sysMainSubTabs').css('display','none')}
+    if (event && event.target == el) {$('.sysMainSubTabs').css('display','none')}
     $('.sysPages').css('display','none');
     $('#sysPage'+page).css('display','');
     console.log(event.target)
@@ -441,6 +440,7 @@ function jsMainOptSwc(el, id) {
 
 
 
+$('#sysMainTabDefalt').click()
 
     $("#p2CalSlc").selectmenu({width:'auto'});
     
