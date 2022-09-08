@@ -205,9 +205,9 @@ visibility: hidden;
         <span class="cssMainTxt">
             CheckApp
         </span>
-        <span><i class="fa fa-cog" onclick="jsMainOptSwc(this, 2)"></i></span>
+        <span><i class="fa fa-cog" onclick="event.stopPropagation(); jsMainOptSwc(this, 2)"></i></span>
     </div>
-    <div class='sysMainTab cssMainTab' onclick="event.stopProjsMainTabSwc(this,'sysMainTab',3)">
+    <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainTab',3)">
         <span class="cssMainTxt">
             Tools
         </span>
