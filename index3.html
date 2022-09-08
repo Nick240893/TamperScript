@@ -408,7 +408,7 @@ function jsP2Clock() {
     var hour = ('0'+now.getHours()).slice(-2);
     var minute = ('0'+now.getMinutes()).slice(-2); 
     var second = ('0'+now.getSeconds()).slice(-2);
-    $('#sysClockText').html(weeks[week]+' '+day+'/'month+'/'+year+' '+hour+minute+second)
+    $('#sysClockText').text(weeks[week]+' '+day+'/'month+'/'+year+' '+hour+':'+minute+':'+second);
     
 }
 
