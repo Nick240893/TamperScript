@@ -207,7 +207,7 @@ visibility: hidden;
         </span>
         <span><i class="fa fa-cog" onclick="jsMainOptSwc(this,'sysMainTab')"></i></span>
     </div>
-    <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainTab')">
+    <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysOptPage2')">
         <span class="cssMainTxt">
             Tools
         </span>
@@ -215,7 +215,7 @@ visibility: hidden;
     </div>
 </div>
 
-<div class="cssMainCont" id="sysPage2" style="display:">
+<div class="cssMainCont" id="sysOptPage2" style="display:">
     <div class='sysMainSubTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainSubTab')">
         <span class="cssMainTxt">
             Edita Check
@@ -370,10 +370,10 @@ function jsMainTabSwc(el, className) {
     $(el).css('background-image','linear-gradient(#0000CD,#00BFFF)')
 }
 
-function jsMainOptSwc(el, className) {
+function jsMainOptSwc(el, id) {
     //event.stopPropagation();
    // jsMainTabSwc(el.parentNode.parentNode, className)
-    ($())
+    ($('#'+id).css('display'))
     
 }
 
