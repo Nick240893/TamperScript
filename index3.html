@@ -205,7 +205,7 @@ visibility: hidden;
         <span class="cssMainTxt">
             CheckApp
         </span>
-        <span><i class="fa fa-cog" onclick="jsMainOptSwc(this,'sysOptPage2')"></i></span>
+        <span><i class="fa fa-cog" onclick="jsMainOptSwc(this, 2)"></i></span>
     </div>
     <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainTab',3)">
         <span class="cssMainTxt">
@@ -376,7 +376,7 @@ function jsMainTabSwc(el, className, page) {
 }
 
 function jsMainOptSwc(el, id) {
-    $('#'+id).css('display',($('#'+id).css('display')=='none') ? '' : 'none')
+    $('#sysOptPage'+id).css('display',($('#sysOptPage'+id).css('display')=='none') ? '' : 'none')
 }
 
 
