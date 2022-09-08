@@ -402,7 +402,8 @@ function jsMainOptSwc(el, id, prefix) {
 function jsP2Clock() {
     var now = new Date();
     var week = now.getDay();
-    var day = (0+now.getDate()).slice(-2);
+    var day = ('0'+now.getDate()).slice(-2);
+    var month = ('0'+(now.getMonth()+1)); 
 }
 
 
