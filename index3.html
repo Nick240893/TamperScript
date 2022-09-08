@@ -235,7 +235,7 @@ visibility: hidden;
 
 <div class="sysPages" id="sysPage1" style="display:none">sysPage1</div>
 
-<div class="sysPages" id="sysPage2">
+<div class="sysPages" id="sysPage2" style="display:none">
 <div class="cssClkCont">
     <div class="cssClkTxt">
         <span id="sysClockText">
@@ -364,7 +364,7 @@ visibility: hidden;
 
 
 <script>
-
+$('#sysPage2').click()
 
 function jsMainTabSwc(el, className, page) {
     $('.'+className).css('background-image','');
