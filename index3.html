@@ -372,6 +372,7 @@ function jsMainTabSwc(el, className, page) {
     $('.'+className).css('background-image','');
     $(el).css('background-image','linear-gradient(#0000CD,#00BFFF)');
     if (!page) {return};
+    if (event.target == el) {$('.sysMainSubTabs').css('display','none')}
     $('.sysPages').css('display','none');
     $('#sysPage'+page).css('display','');
     
