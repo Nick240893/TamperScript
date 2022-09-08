@@ -385,7 +385,8 @@ function jsMainTabSwc(el, className, page) {
     $('.sysPages').css('display','none');
     $('#sysPage'+page).css('display','');
     $('.sysMainSubTabs').each(function(){
-      (!($(this).attr('id')==('sysOptPage'+page)))?$(this).css('display','none'):null;
+        if (!($(this).attr('id')==('sysOptPage'+page))) {
+            $(this).css('display','none');
         }
     })
 }
