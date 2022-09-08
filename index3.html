@@ -201,7 +201,7 @@ visibility: hidden;
         </span>
         <span><i class="fa fa-cog"></i></span>
     </div>
-    <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainTab',2)">
+    <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainTab',2)" id="sysMainTabDefalt">
         <span class="cssMainTxt">
             CheckApp
         </span>
@@ -364,7 +364,7 @@ visibility: hidden;
 
 
 <script>
-$('#sysPage2').click()
+$('#sysMainTabDefalt').click()
 
 function jsMainTabSwc(el, className, page) {
     $('.'+className).css('background-image','');
