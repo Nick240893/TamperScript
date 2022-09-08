@@ -215,10 +215,6 @@ visibility: hidden;
     </div>
 </div>
 
-<div class="sysPages" id="sysPage1" style="display:none">sysPage1</div>
-
-<div class="sysPages" id="sysPage2" style="display:none">
-    
 <div class="cssMainCont sysMainSubTabs" id="sysOptPage2" style="display:none">
     <div class='sysMainSubTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainSubTab')">
         <span class="cssMainTxt">
@@ -238,6 +234,10 @@ visibility: hidden;
 </div>
 
 
+<div class="sysPages" id="sysPage1" style="display:none">sysPage1</div>
+
+<div class="sysPages" id="sysPage2" style="display:none">
+    
 <div class="cssClkCont">
     <div class="cssClkTxt">
         <span id="sysClockText">
@@ -379,6 +379,7 @@ function jsMainTabSwc(el, className, page) {
 }
 
 function jsMainOptSwc(el, id) {
+    
     $('#sysOptPage'+id).css('display',($('#sysOptPage'+id).css('display')=='none') ? '' : 'none')
 }
 
