@@ -365,14 +365,12 @@ visibility: hidden;
 <script>
 
 
-function jsMainTabSwc(el, className) {
+function jsMainTabSwc(el, className, pageSwitch) {
     $('.'+className).css('background-image','')
     $(el).css('background-image','linear-gradient(#0000CD,#00BFFF)')
 }
 
 function jsMainOptSwc(el, id) {
-    //event.stopPropagation();
-   // jsMainTabSwc(el.parentNode.parentNode, className)
     $('#'+id).css('display',($('#'+id).css('display')=='none') ? '' : 'none')
 }
 
