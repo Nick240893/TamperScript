@@ -380,7 +380,8 @@ function jsMainTabSwc(el, className, page) {
     })
 }
 
-function jsMainOptSwc(el, id) {
+function jsMainOptSwc(el, id, prefix) {
+    if (!prefix) {var prefix=sysOptPage}
     $('#sysOptPage'+id).css('display',($('#sysOptPage'+id).css('display')=='none') ? '' : 'none');
 }
 
