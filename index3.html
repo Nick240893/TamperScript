@@ -373,7 +373,7 @@ function jsMainTabSwc(el, className, page) {
     if (!page) {return};
     $('.sysMainSubTabs').each(function(){
         if (!($(this).attr('id')==('sysOptPage'+page))) {
-            
+            $(this).css('display','none')
         }        
     })
     //if (event && event.target == el) {$('.sysMainSubTabs').css('display','none')}
