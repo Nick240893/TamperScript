@@ -371,16 +371,13 @@ function jsMainTabSwc(el, className, page) {
     $('.'+className).css('background-image','');
     $(el).css('background-image','linear-gradient(#0000CD,#00BFFF)');
     if (!page) {return};
+    $('.sysPages').css('display','none');
+    $('#sysPage'+page).css('display','');
     $('.sysMainSubTabs').each(function(){
         if (!($(this).attr('id')==('sysOptPage'+page))) {
             $(this).css('display','none')
         }        
     })
-    //if (event && event.target == el) {$('.sysMainSubTabs').css('display','none')}
-    $('.sysPages').css('display','none');
-    $('#sysPage'+page).css('display','');
-    console.log(event.target)
-    console.log(el)
 }
 
 function jsMainOptSwc(el, id) {
