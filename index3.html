@@ -382,6 +382,7 @@ text-overflow: ellipsis;
 </div>
 <div class="sysPages" id="sysPage3" style="display:none">sysPage3</div>
 
+<button onclick="topFunction()" id="cssButtonToTop">Top</button>
 
 
 <script>
@@ -444,9 +445,9 @@ $('#p2ChkTabDefault').click();
 $('#sysMainTabDefalt').click();
 window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        $(show).css('display','')
+        $('#cssButtonToTop').css('display','')
     } else {
-        $(show).css('display','none')
+        $('#cssButtonToTop').css('display','none')
     }
 }
 
