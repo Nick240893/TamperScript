@@ -3,10 +3,24 @@
 <script src="https://checkapp2.pages.dev/Dipendenze/jQueryUI-Cupertino/external/jquery/jquery.js"></script> 
 <script src="https://checkapp2.pages.dev/Dipendenze/jQueryUI-Cupertino/jquery-ui.js"></script> 
 <link  href="https://checkapp2.pages.dev/Dipendenze/jQueryUI-Cupertino/jquery-ui.css" rel="stylesheet">
-
 <meta name="viewport" content="width=device-width, initial-scale=0.5" charset="UTF-8">
 
 <style>
+/*-----------------------------------------------------------*/
+#cssButtonToTop {
+display: none;
+position: fixed;
+bottom: 3%;
+left: 3%;
+font-size: 18px;
+border: none;
+outline: none;
+background-image: linear-gradient(#0050FE,#6495ED);
+color: white;
+cursor: pointer;
+padding: 15px;
+width: 93vw;
+}
 .fa{cursor: pointer;}
 .cssBrdLft4 {border-left: 4px solid #191970;}
 
@@ -194,21 +208,7 @@ text-overflow: ellipsis;
 
 
 
-/*-----------------------------------------------------------*/
-#cssButtonToTop {
-display: none;
-position: fixed;
-bottom: 3%;
-left: 3%;
-font-size: 18px;
-border: none;
-outline: none;
-background-image: linear-gradient(#0050FE,#6495ED);
-color: white;
-cursor: pointer;
-padding: 15px;
-width: 93vw;
-}
+
 </style>
 
 <div class="cssMainCont">
@@ -396,7 +396,6 @@ width: 93vw;
 </div>
 <div class="sysPages" id="sysPage3" style="display:none">sysPage3</div>
 
-<button onclick="topFunction()" id="cssButtonToTop">Top</button>
 
 
 <script>
