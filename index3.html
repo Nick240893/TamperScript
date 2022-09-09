@@ -436,10 +436,6 @@ function jsP2Clock() {
 }
 
 
-
-
-
-
 function jsP2ChkTab(el, select, show) {
     $('.cssChkTab').css('background-image','');
     $(el).css('background-image','linear-gradient(#0000CD,#00BFFF)');
@@ -482,7 +478,7 @@ console.log(mmssTimestamp+' mmss');
 
 
 
-    $( "#datepicker" ).datepicker({
+$( "#datepicker" ).datepicker({
 	 showButtonPanel: true,
 	 showOtherMonths: false,
 	 selectOtherMonths: true,
@@ -503,9 +499,7 @@ console.log(mmssTimestamp+' mmss');
 	 firstDay: 1,
 	 currentText: 'Oggi',
 	 buttonImageOnly: true,
-    });
-
-//$('#datepicker').datepicker('show')
+});
 
 
 
@@ -513,16 +507,6 @@ console.log(mmssTimestamp+' mmss');
 
 
 
-
-
-
-
-
-
-    
-    //$('.child').css({'display': ''});
-    
-   //  ($('.child').width() > width) ? $('.child').css({'max-width': width}) : null ;
      var width=Math.max.apply(null, $(".sizeFixClock").map(function(){ return parseInt($(this).width()) }).get());
      $('.cssChkLstTblClk').css({'width': width})
      console.log(width)
