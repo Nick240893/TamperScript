@@ -427,7 +427,8 @@ function jsP2Clock() {
     $('#sysClockText').text(weeks[week]+' '+day+'/'+month+'/'+year+' '+hour+':'+minute+':'+second);
     window.dateTimestamp = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0 ) / 1000; //format 21/09/2022 --:--:-- in Timestamp
     window.hhmmssTimestamp = new Date(0,0,0,now.getHours(),now.getMinutes(),now.getSeconds()) / 1000; //format --/--/---- 11:11:11 in Timestamp
-    window.hhmmTimestamp = new Date(0,0,0,now.getHours(),now.getMinutes(),now.()) / 1000; //format --/--/---- 11:11:11 in Timestamp
+    window.hhmmTimestamp = new Date(0,0,0,now.getHours(),now.getMinutes(),0) / 1000; //format --/--/---- 11:11:-- in Timestamp
+    window.hhTimestamp = new Date(0,0,0,now.getHours(),0,0) / 1000; //format --/--/---- 11:--:-- in Timestamp
     
 }
 
