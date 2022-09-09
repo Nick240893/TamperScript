@@ -444,10 +444,10 @@ $('#p2ChkTabDefault').click();
 $('#sysMainTabDefalt').click();
 window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        mybutton.style.display = "block";
+        $(show).css('display','')
     } else {
-        mybutton.style.display = "none";
-}
+        $(show).css('display','none')
+    }
 }
 
 
