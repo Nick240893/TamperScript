@@ -429,8 +429,8 @@ function jsP2Clock() {
     window.dateTimestamp   = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0 ) / 1000;  //format 21/09/2022 --:--:-- in Timestamp
     window.hhmmssTimestamp = Math.round(nowTimestamp-dateTimestamp);                                  //format --/--/---- 11:11:11 in Timestamp
     window.hhmmTimestamp   = Math.round(hhmmssTimestamp-now.getSeconds());                            //format --/--/---- 11:00:-- in Timestamp
-    window.hhTimestamp     = Math.round(hhmmTimestamp-now.getSeconds());                              //format --/--/---- 11:--:-- in Timestamp
-    window.mmTimestamp     = new Date(0,0,0,0,now.getMinutes(),0) / 1000;                             //format --/--/---- --:00:-- in Timestamp
+    window.hhTimestamp     = Math.round(hhmmTimestamp-now.getMinutes());                              //format --/--/---- 11:--:-- in Timestamp
+    window.mmTimestamp     = Math.round(hhmmTimestamp-now.getMinutes());                             //format --/--/---- --:00:-- in Timestamp
     window.mmssTimestamp   = new Date(0,0,0,0,now.getMinutes(),now.getSeconds()) / 1000;              //format --/--/---- --:00:00 in Timestamp
     
 }
