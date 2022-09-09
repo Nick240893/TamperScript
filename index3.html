@@ -425,7 +425,7 @@ function jsP2Clock() {
     var minute = ('0'+now.getMinutes()).slice(-2); 
     var second = ('0'+now.getSeconds()).slice(-2);
     $('#sysClockText').text(weeks[week]+' '+day+'/'+month+'/'+year+' '+hour+':'+minute+':'+second);
-    
+    window.dateTimestamp = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0 ) / 1000; //21/09/2022 00:00:00
 }
 
 function jsP2ChkTab(el, select, show) {
