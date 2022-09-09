@@ -7,8 +7,7 @@
 
 <style>
 /*-----------------------------------------------------------*/
-#cssButtonToTop {
-
+.cssButtonToTop {
 position: fixed;
 bottom: 3%;
 left: 3%;
@@ -206,7 +205,7 @@ text-overflow: ellipsis;
 }
 /*-----------------------------------------------------------*/
 </style>
-<button onclick="" id="cssButtonToTop">Top</button>
+<button onclick="" class="cssButtonToTop ui-front" style="display:none">Top</button>
 
 <div class="cssMainCont">
     <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainTab',1)">
@@ -455,9 +454,9 @@ $('#p2ChkTabDefault').click();
 $('#sysMainTabDefalt').click();
 window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        $('#cssButtonToTop').css('display','')
+        $('.cssButtonToTop').css('display','')
     } else {
-        $('#cssButtonToTop').css('display','none')
+        $('.cssButtonToTop').css('display','none')
     }
 }
 
