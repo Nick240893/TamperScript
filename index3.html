@@ -306,15 +306,7 @@ text-overflow: ellipsis;
 </div>
 
 
-
-
-
-<div class="cssChkLstCont" id="p2ChkLstMaint" style="display:none">
-    Maintenance
-</div>
-
-
-<div class="cssChkLstCont" id="p2ChkLstCheck">
+<div class="cssChkPre">
     <div class="cssChkPreTab">
         <span class="cssChkPreTxt">
             edit
@@ -324,7 +316,16 @@ text-overflow: ellipsis;
         <span class="cssChkPreTxt">
             Reset
         </span>
-    </div><b>
+    </div>
+</div>
+
+
+<div class="cssChkLstCont" id="p2ChkLstMaint" style="display:none">
+    Maintenance
+</div>
+
+
+<div class="cssChkLstCont" id="p2ChkLstCheck">
     <table class="cssChkLstTbl" id="p2ChkLstTbl">
         <tr>
             <td class="cssChkLstTd cssChkLstTblClk">
@@ -400,6 +401,11 @@ function jsMainTabSwc(el, className, page) {
         }
     })
 }
+
+function jsP2ChkTab(el, className, hide) {
+    
+}
+
 
 function jsMainOptSwc(el, id, prefix) {
     if (!prefix) {var prefix='#sysOptPage'}
