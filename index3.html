@@ -416,12 +416,12 @@ function jsMainOptSwc(el, id, prefix) {
 }
 
 function jsP2Clock() {
-    var now = new Date();
-    var week = now.getDay();
-    var day = ('0'+now.getDate()).slice(-2);
-    var month = ('0'+(now.getMonth()+1)).slice(-2);
-    var year = ('0'+now.getFullYear()).slice(-2);
-    var hour = ('0'+now.getHours()).slice(-2);
+    var now    = new Date();
+    var week   = now.getDay();
+    var day    = ('0'+now.getDate()).slice(-2);
+    var month  = ('0'+(now.getMonth()+1)).slice(-2);
+    var year   = ('0'+now.getFullYear()).slice(-2);
+    var hour   = ('0'+now.getHours()).slice(-2);
     var minute = ('0'+now.getMinutes()).slice(-2); 
     var second = ('0'+now.getSeconds()).slice(-2);
     $('#sysClockText').text(weeks[week]+' '+day+'/'+month+'/'+year+' '+hour+':'+minute+':'+second);
