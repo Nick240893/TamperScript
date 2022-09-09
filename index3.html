@@ -205,7 +205,7 @@ text-overflow: ellipsis;
 }
 /*-----------------------------------------------------------*/
 </style>
-<button onclick="" class="cssButtonToTop ui-front" style="display:none">Top</button>
+<button onclick="sysMainToTop()" class="cssButtonToTop ui-front" style="display:none">Top</button>
 
 <div class="cssMainCont">
     <div class='sysMainTab cssMainTab' onclick="jsMainTabSwc(this,'sysMainTab',1)">
@@ -395,6 +395,11 @@ text-overflow: ellipsis;
 
 
 <script>
+
+function jsMainToTop() {
+    
+}
+
 
 function jsMainTabSwc(el, className, page) {
     $('.'+className).css('background-image','');
