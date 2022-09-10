@@ -430,9 +430,9 @@ function jsP2Clock() {
     window.hhmmssTimestamp = Math.round((hh*60*60)+(mm*60)+ss);                                  //format --/--/---- 11:11:11 in Timestamp
     window.hhmmTimestamp   = Math.round(hhmmssTimestamp-ss);                            //format --/--/---- 11:00:-- in Timestamp
     window.hhTimestamp     = Math.round(hhmmTimestamp-(mm*60)));                         //format --/--/---- 11:--:-- in Timestamp
-    window.mmTimestamp     = Math.round(hhmmTimestamp-hhTimestamp);                                   //format --/--/---- --:00:-- in Timestamp
-    window.ssTimestamp     = Math.round(hhmmssTimestamp-hhmmTimestamp);                               //format --/--/---- --:--:00 in Timestamp
-    window.mmssTimestamp   = Math.round(hhmmssTimestamp-hhTimestamp);                                 //format --/--/---- --:00:00 in Timestamp
+    window.mmTimestamp     = Math.round(mm*60);                                   //format --/--/---- --:00:-- in Timestamp
+    window.ssTimestamp     = Math.round(ss);                               //format --/--/---- --:--:00 in Timestamp
+    window.mmssTimestamp   = Math.round(mmTimestamp+ss);                                 //format --/--/---- --:00:00 in Timestamp
 }
 
 
