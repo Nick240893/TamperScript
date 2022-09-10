@@ -416,6 +416,7 @@ function jsMainOptSwc(el, id, prefix) {
 }
 
 function jsP2Clock() {
+    if 
     var now= new Date();
     var ww = now.getDay();
     var dd = ('0'+now.getDate()).slice(-2);
@@ -435,6 +436,8 @@ function jsP2Clock() {
     window.mmssTimestamp   = Math.round(mmTimestamp+Number(ss));                                     //format --/--/---- --:00:00 in Timestamp
     if ((window.firstSessionRun)) {return 0};
     window.firstSessionRun = 'false';
+    
+    
 console.log(new Date().toString())
 console.log(nowTimestamp+' now');
 console.log(dateTimestamp+' date');
