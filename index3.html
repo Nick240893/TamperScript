@@ -435,7 +435,16 @@ function jsP2Clock() {
     window.mmssTimestamp   = Math.round(mmTimestamp+Number(ss));                                     //format --/--/---- --:00:00 in Timestamp
     if (!(window.firstSessionRun)) {return};
     window.firstSessionRun = 0;
-    
+console.log(new Date().toString())
+console.log(nowTimestamp+' now');
+console.log(dateTimestamp+' date');
+console.log(hhmmssTimestamp+' hhmmss');
+console.log(hhmmTimestamp+' hhmm');
+console.log(ssTimestamp+' ss');
+console.log(hhTimestamp+' hh');
+console.log(mmTimestamp+' mm');
+console.log(mmssTimestamp+' mmss');
+
 }
 
 
@@ -466,15 +475,6 @@ window.onscroll = function() {
     }
 }
 
-console.log(new Date().toString())
-console.log(nowTimestamp+' now');
-console.log(dateTimestamp+' date');
-console.log(hhmmssTimestamp+' hhmmss');
-console.log(hhmmTimestamp+' hhmm');
-console.log(ssTimestamp+' ss');
-console.log(hhTimestamp+' hh');
-console.log(mmTimestamp+' mm');
-console.log(mmssTimestamp+' mmss');
 
 
 
