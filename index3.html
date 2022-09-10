@@ -424,31 +424,22 @@ function jsP2Clock() {
     var hh = ('0'+now.getHours()).slice(-2);
     var mm = ('0'+now.getMinutes()).slice(-2); 
     var ss = ('0'+now.getSeconds()).slice(-2);
-    $('#sysClockText').text(weeks[ww]+' '+dd+'/'+mh+'/'+yy+' '+hh+':'+mm+':'+ss);
-    window.nowTimestamp    = Math.round(now.getTime() / 1000);                                       //format 21/09/2022 11:00:00 in Timestamp
-    window.dateTimestamp   = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0 ) / 1000; //format 21/09/2022 --:--:-- in Timestamp
-    window.hhmmssTimestamp = Math.round((Number(hh)*60*60)+(Number(mm)*60)+Number(ss));              //format --/--/---- 11:11:11 in Timestamp
-    window.hhmmTimestamp   = Math.round(hhmmssTimestamp-Number(ss));                                 //format --/--/---- 11:00:-- in Timestamp
-    window.hhTimestamp     = Math.round(hhmmTimestamp-(Number(mm)*60));                              //format --/--/---- 11:--:-- in Timestamp
-    window.mmTimestamp     = Math.round(Number(mm)*60);                                              //format --/--/---- --:00:-- in Timestamp
-    window.ssTimestamp     = Math.round(Number(ss)+0);                                               //format --/--/---- --:--:00 in Timestamp
-    window.mmssTimestamp   = Math.round(mmTimestamp+Number(ss));                                     //format --/--/---- --:00:00 in Timestamp
-    if ((window.firstSessionRun)) {return 0};
-    window.firstSessionRun = 'false';
-    
-    
-console.log(new Date().toString())
-console.log(nowTimestamp+' now');
-console.log(dateTimestamp+' date');
-console.log(hhmmssTimestamp+' hhmmss');
-console.log(hhmmTimestamp+' hhmm');
-console.log(ssTimestamp+' ss');
-console.log(hhTimestamp+' hh');
-console.log(mmTimestamp+' mm');
-console.log(mmssTimestamp+' mmss');
-
+    $('#sysClockText').text(sysApp.time.weeks[ww]+' '+dd+'/'+mh+'/'+yy+' '+hh+':'+mm+':'+ss);
+    sysApp.time.nowTimestamp    = Math.round(now.getTime() / 1000);                                       //format 21/09/2022 11:00:00 in Timestamp
+    sysApp.time.dateTimestamp   = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0 ) / 1000; //format 21/09/2022 --:--:-- in Timestamp
+    sysApp.time.hhmmssTimestamp = Math.round((Number(hh)*60*60)+(Number(mm)*60)+Number(ss));              //format --/--/---- 11:11:11 in Timestamp
+    sysApp.time.hhmmTimestamp   = Math.round(sysApp.time.hhmmssTimestamp-Number(ss));                                 //format --/--/---- 11:00:-- in Timestamp
+    sysApp.time.hhTimestamp     = Math.round(sysApp.time.hhmmTimestamp-(Number(mm)*60));                              //format --/--/---- 11:--:-- in Timestamp
+    sysApp.time.mmTimestamp     = Math.round(Number(mm)*60);                                              //format --/--/---- --:00:-- in Timestamp
+    sysApp.time.ssTimestamp     = Math.round(Number(ss)+0);                                               //format --/--/---- --:--:00 in Timestamp
+    sysApp.time.mmssTimestamp   = Math.round(sysApp.time.mmTimestamp+Number(ss));                                     //format --/--/---- --:00:00 in Timestamp
+    if ((sysApp.firstSessionRun)) {return};
+    sysApp.firstSessionRun = 'false';
+    sysApp.shift.auto = ((sysApp.time.hhmmTimestamp<27000) || (sysApp.time.hhmmTimestamp>84599)) ? '1' : null;
+    sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>27000) && (sysApp.time.hhmmTimestamp<55800)) ? '2' : sysApp.shift.auto ;
+    sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>55799) && (sysApp.time.hhmmTimestamp<84600)) ? '3' : sysApp.shift.auto ;
+    $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
 }
-
 
 function jsP2ChkTab(el, select, show) {
     $('.cssChkTab').css('background-image','');
@@ -460,16 +451,25 @@ function jsP2ChkTab(el, select, show) {
 }
 
 
-var x={};
-function jsTest() {x.test='hello';}
+
+
+
+
+
+var sysApp={};
+sysApp.time={};
+sysApp.shift={};
+sysApp.page2={};
+sysApp.time.weeks = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato']; 
+sysApp.time.months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
+sysApp.time.weeksShort = ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
 
 
 
 
 $("#p2CalSlc").selectmenu({width:'auto'});
-var weeks = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato']; 
 jsP2Clock();
-var test = setInterval(jsP2Clock,500);
+sysApp.page2.setInterval = setInterval(jsP2Clock,500);
 $('#p2ChkTabDefault').click();
 $('#sysMainTabDefalt').click();
 window.onscroll = function() {
@@ -482,6 +482,15 @@ window.onscroll = function() {
 
 
 
+console.log(new Date().toString());
+console.log(sysApp.time.nowTimestamp+' now');
+console.log(sysApp.time.dateTimestamp+' date');
+console.log(sysApp.time.hhmmssTimestamp+' hhmmss');
+console.log(sysApp.time.hhmmTimestamp+' hhmm');
+console.log(sysApp.time.ssTimestamp+' ss');
+console.log(sysApp.time.hhTimestamp+' hh');
+console.log(sysApp.time.mmTimestamp+' mm');
+console.log(sysApp.time.mmssTimestamp+' mmss');
 
 
 
@@ -494,11 +503,11 @@ $( "#datepicker" ).datepicker({
 	 dateFormat: 'yy-mm-dd',
 	 changeMonth: true,
 	 changeYear: true,
-	 monthNamesShort: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
-	 monthNames: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
-	 dayNames: ['Domenica','Lunedí', 'Martedí', 'Mercoledí', 'Giovedí', 'Venerdí', 'Sabato'],
-	 dayNamesShort: ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
-	 dayNamesMin: ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'],
+	 monthNamesShort: sysApp.time.months,
+	 monthNames: sysApp.time.months,
+	 dayNames: sysApp.time.weeks,
+	 dayNamesShort: sysApp.time.weeksShort,
+	 dayNamesMin: sysApp.time.weeksShort,
 	 weekHeader: 'GdS',
 	 closeText: 'Chiudi',
 	 prevText: "Indietro",
