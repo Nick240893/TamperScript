@@ -433,7 +433,7 @@ function jsP2Clock() {
     window.mmTimestamp     = Math.round(Number(mm)*60);                                              //format --/--/---- --:00:-- in Timestamp
     window.ssTimestamp     = Math.round(Number(ss)+0);                                               //format --/--/---- --:--:00 in Timestamp
     window.mmssTimestamp   = Math.round(mmTimestamp+Number(ss));                                     //format --/--/---- --:00:00 in Timestamp
-    if (!(window.firstSessionRun)) {return};
+    if ((window.firstSessionRun)) {return};
     window.firstSessionRun = 0;
 console.log(new Date().toString())
 console.log(nowTimestamp+' now');
