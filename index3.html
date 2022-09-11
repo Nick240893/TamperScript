@@ -441,7 +441,7 @@ function jsP2Clock() {
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>55799) && (sysApp.time.hhmmTimestamp<84600)) ? '3' : sysApp.shift.auto ;
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
     if (sysApp.time.hhmmTimestamp>84599) {
-        
+        sysApp.time.fix=
     }
 }
 
@@ -462,6 +462,7 @@ function jsP2ChkTab(el, select, show) {
 
 var sysApp={};
 sysApp.time={};
+sysApp.time.fix={}
 sysApp.shift={};
 sysApp.page2={};
 sysApp.time.weeks = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato']; 
