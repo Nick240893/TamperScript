@@ -443,8 +443,8 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
         
     }
-    sysApp.timeFix.now = now.getTime()+( 3600 * 1000 * 24)
-        console.log(sysApp.timeFix.now)
+    sysApp.timeFix.now = new Date (now.getTime()+( 3600 * 1000 * 24))
+        console.log(sysApp.timeFix.now.toString())
 }
 
 function jsP2ChkTab(el, select, show) {
