@@ -429,11 +429,11 @@ function jsP2Clock() {
     sysApp.time.nowTimestamp    = Math.round(now.getTime() / 1000);                                       //format 21/09/2022 11:00:00 in Timestamp
     sysApp.time.dateTimestamp   = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0 ) / 1000; //format 21/09/2022 --:--:-- in Timestamp
     sysApp.time.hhmmssTimestamp = Math.round((Number(hh)*60*60)+(Number(mm)*60)+Number(ss));              //format --/--/---- 11:11:11 in Timestamp
-    sysApp.time.hhmmTimestamp   = Math.round(sysApp.time.hhmmssTimestamp-Number(ss));                                 //format --/--/---- 11:00:-- in Timestamp
-    sysApp.time.hhTimestamp     = Math.round(sysApp.time.hhmmTimestamp-(Number(mm)*60));                              //format --/--/---- 11:--:-- in Timestamp
+    sysApp.time.hhmmTimestamp   = Math.round(sysApp.time.hhmmssTimestamp-Number(ss));                     //format --/--/---- 11:00:-- in Timestamp
+    sysApp.time.hhTimestamp     = Math.round(sysApp.time.hhmmTimestamp-(Number(mm)*60));                  //format --/--/---- 11:--:-- in Timestamp
     sysApp.time.mmTimestamp     = Math.round(Number(mm)*60);                                              //format --/--/---- --:00:-- in Timestamp
     sysApp.time.ssTimestamp     = Math.round(Number(ss)+0);                                               //format --/--/---- --:--:00 in Timestamp
-    sysApp.time.mmssTimestamp   = Math.round(sysApp.time.mmTimestamp+Number(ss));                                     //format --/--/---- --:00:00 in Timestamp
+    sysApp.time.mmssTimestamp   = Math.round(sysApp.time.mmTimestamp+Number(ss));                         //format --/--/---- --:00:00 in Timestamp
     if (sysApp.firstSessionRun) {return};
     sysApp.firstSessionRun = 'false';
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp<27000) || (sysApp.time.hhmmTimestamp>84599)) ? '1' : null;
