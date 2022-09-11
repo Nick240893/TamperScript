@@ -416,7 +416,7 @@ function jsMainOptSwc(el, id, prefix) {
 }
 
 function jsP2Clock() {
-    sysApp.time.now= now= new Date(2022,8,11,23,50,0);
+    sysApp.time.now= now= new Date();
     sysApp.time.ww = ww = now.getDay();
     sysApp.time.dd = dd = ('0'+now.getDate()).slice(-2);
     sysApp.time.mh = mh = ('0'+(now.getMonth()+1)).slice(-2);
@@ -448,7 +448,7 @@ function jsP2Clock() {
         $("#datepicker").val(yyF+'-'+mhF+'-'+ddF);
         $('#p2CalTxt').text(ddF+'/'+mhF+'/'+yyF)
     } else {
-        $("#datepicker").val(yy+'-');
+        $("#datepicker").val(yy+'-'+mh +'-'+dd);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     }
 }
