@@ -439,7 +439,7 @@ function jsP2Clock() {
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp<27000) || (sysApp.time.hhmmTimestamp>84599)) ? '1' : null;
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>27000) && (sysApp.time.hhmmTimestamp<55800)) ? '2' : sysApp.shift.auto ;
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>55799) && (sysApp.time.hhmmTimestamp<84600)) ? '3' : sysApp.shift.auto ;
-    /*    sysApp.timeFix.now = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
+        sysApp.timeFix.now = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
         $("#datepicker").datepicker(sysApp.time.datePicker);
         $('#p2CalTxt').text(sysApp.timeFix.now.toISOString())
 
@@ -447,9 +447,9 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     } else {
-        $("#datepicker").datepicker("setDate",now);
+        $("#datepicker").datepicker(sysApp.time.datePicker).datepicker("setDate",now);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
-    }*/
+    }
 }
 
 function jsP2ChkTab(el, select, show) {
