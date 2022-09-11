@@ -443,10 +443,10 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
         sysApp.timeFix.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
         sysApp.timeFix.now.dd = yyF = now.getFullYear();
-        sysApp.timeFix.now.dd = mhF = ('0'+nw.getDate()).slice(-2);
+        sysApp.timeFix.now.dd = mhF = ('0'+(nw.getMonth()+1)).slice(-2);
         sysApp.timeFix.now.dd = ddF = ('0'+nw.getDate()).slice(-2);
         $("#datepicker").val(yyF+'-'+mhF+'-'+ddF);
-        $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
+        $('#p2CalTxt').text(ddF+'/'+mhF+'/'+yyF)
     } else {
         $("#datepicker").datepicker("setDate",now);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
