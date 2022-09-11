@@ -269,7 +269,7 @@ text-overflow: ellipsis;
         <span class="cssCalImg">
             <i class="fa fa-calendar" title="Calendario" onclick="$('#datepicker').datepicker('show')"></i>
             <div class="cssCalSel">
-                <input style='width:0px; height:0px' type="text" id="datepickr"></input>
+                <input style='width:0px; height:0px' type="text" id="datepicker"></input>
             </div>
         </span>&nbsp;
         <span class="cssCalTxt">
@@ -385,10 +385,6 @@ text-overflow: ellipsis;
     Tools
 </div>
 
-                <input style='width:auto; height:auto' type="text" id="datepicker"></input>
-
-
-
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -443,11 +439,15 @@ function jsP2Clock() {
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp<27000) || (sysApp.time.hhmmTimestamp>84599)) ? '1' : null;
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>27000) && (sysApp.time.hhmmTimestamp<55800)) ? '2' : sysApp.shift.auto ;
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>55799) && (sysApp.time.hhmmTimestamp<84600)) ? '3' : sysApp.shift.auto ;
+        sysApp.timeFix.now = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
+        $("#datepicker").text(sysApp.timeFix.now);
+        $('#p2CalTxt').text(sysApp.timeFix.now.toISOString())
+
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
     if (sysApp.time.hhmmTimestamp>84599) {
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     } else {
-        $("#datePicker").val('2022-09-18');
+        $("#datepicker").datepicker("setDate",now);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     }
 }
@@ -472,6 +472,7 @@ sysApp.time={};
 sysApp.timeFix={}
 sysApp.shift={};
 sysApp.page2={};
+sysApp.time.datePicker
 sysApp.time.weeks = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato']; 
 sysApp.time.months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
 sysApp.time.weeksShort = ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
@@ -507,7 +508,7 @@ console.log(sysApp.time.mmssTimestamp+' mmss');
 
 
 
-sysApp.time.datePicker = {
+{
 	 showButtonPanel: true,
 	 showOtherMonths: false,
 	 selectOtherMonths: true,
@@ -528,9 +529,8 @@ sysApp.time.datePicker = {
 	 firstDay: 1,
 	 currentText: 'Oggi',
 	 buttonImageOnly: true,
-}
+});
 
-$("#datepicker").datepicker(sysApp.time.datePicker )
 
 
 
