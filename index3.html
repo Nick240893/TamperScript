@@ -416,7 +416,7 @@ function jsMainOptSwc(el, id, prefix) {
 }
 
 function jsP2Clock() {
-    sysApp.time.now= now= new Date();
+    sysApp.time.now= now= new Date(2022,8,11,23,50,0);
     sysApp.time.ww = ww = now.getDay();
     sysApp.time.dd = dd = ('0'+now.getDate()).slice(-2);
     sysApp.time.mh = mh = ('0'+(now.getMonth()+1)).slice(-2);
@@ -442,11 +442,8 @@ function jsP2Clock() {
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
     if (sysApp.time.hhmmTimestamp>84599) {
         sysApp.timeFix.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
-        sysApp.timeFix.now.yy = yyF = nw.getFullYear();
-        sysApp.timeFix.now.mh = mhF = ('0'+(nw.getMonth()+1)).slice(-2);
-        sysApp.timeFix.now.dd = ddF = ('0'+nw.getDate()).slice(-2);
-        $("#datepicker").val(yyF+'-'+mhF+'-'+ddF);
-        $('#p2CalTxt').text(ddF+'/'+mhF+'/'+yyF)
+        $("#datepicker").val(nw.toLocaleDateString('en-CA'));
+        $('#p2CalTxt').text(n)
     } else {
         $("#datepicker").val(yy+'-'+mh +'-'+dd);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
@@ -498,7 +495,7 @@ window.onscroll = function() {
 
 console.log(new Date().toString());
 console.log(new Date().toLocaleDateString());
-console.log(new Date().toLocaleString('en-CA')) // 08/19/2020 (month and day with two digits)
+console.log(new Date().toLocaleDateString('en-CA')) // 08/19/2020 (month and day with two digits)
   
 console.log(sysApp.time.nowTimestamp+' now');
 console.log(sysApp.time.dateTimestamp+' date');
