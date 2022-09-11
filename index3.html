@@ -442,6 +442,7 @@ function jsP2Clock() {
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
     if (sysApp.time.hhmmTimestamp>84599) {
         sysApp.timeFix.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
+        sysApp.timeFix.ISO = 
         $("#datepicker").val(nw.toLocaleDateString('en-CA'));
         $('#p2CalTxt').text(nw.toLocaleDateString('it-IT',{year: 'numeric', month: '2-digit', day: '2-digit'}))
     } else {
