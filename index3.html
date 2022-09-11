@@ -7,116 +7,124 @@
 
 <style>
 /*-----------------------------------------------------------*/
-.cssButtonToTop {
-position: fixed;
-bottom: 3%;
-left: 3%;
-font-size: 18px;
-border: none;
-outline: none;
-background-image: linear-gradient(#0050FE,#6495ED);
-color: white;
-cursor: pointer;
-padding: 15px;
-width: 93vw;
-}
 .fa{cursor: pointer;}
 .cssBrdLft4 {border-left: 4px solid #191970;}
+.cssButtonToTop {
+    position: fixed;
+    bottom: 3%;
+    left: 3%;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-image: linear-gradient(#0050FE,#6495ED);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 93vw;
+}
 
 /*-----------------------------------------------------------*/
 .cssMainCont {
-display: flex;
-background-image: linear-gradient(#4983ff, #87CEEB);
-border-top: 4px solid #191970;
-border-left: 4px solid #191970;
+    display: flex;
+    background-image: linear-gradient(#4983ff, #87CEEB);
+    border-top: 4px solid #191970;
+    border-left: 4px solid #191970;
 }
 
 .cssMainTab {
-display:flex;
-width:100%;
-font-size: 22px;
-color: white;
-overflow: hidden;
-text-overflow: ellipsis;
-border-right: 4px solid #191970;
-text-align: center;
-white-space: nowrap;
+    display:flex;
+    width:100%;
+    font-size: 22px;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-right: 4px solid #191970;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .cssMainTxt {
-overflow: hidden;
-text-overflow: ellipsis;
-padding: 15px;
-margin-left: auto;
-margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*-----------------------------------------------------------*/
 
 .cssClkCont {
-display: flex;
-border: 4px solid #191970;
-font-size: 27px;
-background-color: #0050FE;
-color: white;
-overflow: hidden;
-text-overflow: ellipsis;
-position: sticky;
-top: 0;
+    display: flex;
+    border: 4px solid #191970;
+    font-size: 35px;
+    font-weight: bold;
+    background-color: #0050FE;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: sticky;
+    top: 0;
 }
 
 .cssClkTxt {
-margin-left: auto;
-margin-right: auto;
-overflow: hidden;
-text-overflow: ellipsis;
-padding: 30px 3px;
-text-align: center;
-white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 20px 3px;
+    text-align: center;
+    white-space: nowrap;
 }
+
+.cssClkBtn {
+    
+}
+
 
 /*-----------------------------------------------------------*/
 
 .cssCalCont {
-display: flex;
-border-right: 4px solid #191970;
-border-left: 4px solid #191970;
-font-size: 27px;
-background-color: #0050FE;
-color: white;
+    display: flex;
+    border-right: 4px solid #191970;
+    border-left: 4px solid #191970;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #0050FE;
+    color: white;
 }
 .cssCalDiv {
-display: flex;
-margin-left: auto;
-margin-right: auto;
-overflow: hidden;
-text-overflow: ellipsis;
-padding: 0px 0px;
-text-align: center;
-position: ;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0px 0px;
+    text-align: center;
+    position: ;
 }
 .cssCalBck{
-padding: 35px 0px;
+    padding: 25px 0px;
 }
-.cssCalImg{padding: 33px 0px;}
+.cssCalImg{padding: 23px 0px;}
 .cssCalTxt{
-padding: 30px 0px;
-overflow: hidden;
-text-overflow: ellipsis;
+    padding: 20px 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .cssCalSlc{
-padding: 30px 0px;
-text-align: center;
-font-size: 15px;
-color:red;
+    padding: 20px 0px;
+    text-align: center;
+    font-size: 15px;
+    color:red;
 }
 
 .cssCalSel {
-width: 0;
-height: 0;
-opacity: 0;
-visibility: hidden;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
 }
+
 
 /*-----------------------------------------------------------*/
 
@@ -257,7 +265,7 @@ text-overflow: ellipsis;
             MERCOLEDÌ 21/09/2022 11:00:00
         </span>
     </div>
-    <span><i class="fa fa-cog"></i></span>
+    <span><i class="cssClkBtn fa fa-cog"></i></span>
 </div>
 
 
@@ -456,10 +464,10 @@ function jsP2Clock() {
         sysApp.timeFix.ISO = iso= nw.toLocaleDateString('en-CA');
         sysApp.timeFix.Ita = ita= nw.toLocaleDateString('it-IT',{year: 'numeric', month: '2-digit', day: '2-digit'});
         $("#datepicker").val(iso);
-        $('#p2CalTxt').text(ita)
+        $('#p2CalTxt').text(ita);
     } else {
-        $("#datepicker").val(yy+'-'+mh +'-'+dd);
-        $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
+        $("#datepicker").val(iso);
+        $('#p2CalTxt').text(ita);
     }
 }
 
@@ -510,7 +518,7 @@ window.onscroll = function() {
 console.log(new Date().toLocaleString('it-IT', {year: 'numeric', month: '2-digit', day: '2-digit', weekday:"long", hour: '2-digit', hour12: false, minute:'2-digit', second:'2-digit'}))
 console.log(new Date().toString());
 console.log(new Date().toLocaleDateString());
-console.log(new Date().toLocaleDateString('en-CA')) // 08/19/2020 (month and day with two digits)
+console.log(new Date().toLocaleDateString('en-CA'))
   
 console.log(sysApp.time.nowTimestamp+' now');
 console.log(sysApp.time.dateTimestamp+' date');
