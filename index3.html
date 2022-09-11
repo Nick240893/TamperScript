@@ -443,8 +443,8 @@ function jsP2Clock() {
 
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
     if (sysApp.time.hhmmTimestamp>84599) {
-        sysApp.timeFix.now = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
-        $("#datepicker").val('yy-mh-dd');
+        sysApp.timeFix.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
+        $("#datepicker").val(('0'+now.getDate()).slice(-2);+'-'+mh-dd');
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     } else {
         $("#datepicker").datepicker("setDate",now);
