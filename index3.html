@@ -496,6 +496,18 @@ window.onscroll = function() {
 
 
 
+console.log(new Date().toString());
+console.log(new Date().toISOString());
+console.log(sysApp.time.nowTimestamp+' now');
+console.log(sysApp.time.dateTimestamp+' date');
+console.log(sysApp.time.hhmmssTimestamp+' hhmmss');
+console.log(sysApp.time.hhmmTimestamp+' hhmm');
+console.log(sysApp.time.ssTimestamp+' ss');
+console.log(sysApp.time.hhTimestamp+' hh');
+console.log(sysApp.time.mmTimestamp+' mm');
+console.log(sysApp.time.mmssTimestamp+' mmss');
+
+
 
 
 $( "#datepicker" ).datepicker({
@@ -519,7 +531,6 @@ $( "#datepicker" ).datepicker({
 	 firstDay: 1,
 	 currentText: 'Oggi',
 	 buttonImageOnly: true,
-     
 });
 
 
