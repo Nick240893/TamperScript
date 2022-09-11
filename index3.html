@@ -443,7 +443,7 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
         sysApp.timeFix.now = new Date (now.getTime()+( 3600 * 1000 * 24))
         var yy=
-        sysApp.timeFix.date= 
+        sysApp.timeFix.date= now.getFullYear().slice(-2);
     }
 }
 
