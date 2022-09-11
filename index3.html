@@ -442,8 +442,7 @@ function jsP2Clock() {
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
     if (sysApp.time.hhmmTimestamp>84599) {
         sysApp.timeFix.now = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+( 3600 * 1000 * 24));
-        $("#datepicker").datepicker().datepicker("setDate",sysApp.timeFix.now );
-        console.log($("#datepicker").datepicker('getDate').toString());
+        $("#datepicker").datepicker().datepicker("setDate",sysApp.timeFix.now);
     }
 }
 
