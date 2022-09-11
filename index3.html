@@ -496,17 +496,6 @@ window.onscroll = function() {
 
 
 
-console.log(new Date().toString());
-console.log(sysApp.time.nowTimestamp+' now');
-console.log(sysApp.time.dateTimestamp+' date');
-console.log(sysApp.time.hhmmssTimestamp+' hhmmss');
-console.log(sysApp.time.hhmmTimestamp+' hhmm');
-console.log(sysApp.time.ssTimestamp+' ss');
-console.log(sysApp.time.hhTimestamp+' hh');
-console.log(sysApp.time.mmTimestamp+' mm');
-console.log(sysApp.time.mmssTimestamp+' mmss');
-
-
 
 
 $( "#datepicker" ).datepicker({
@@ -530,6 +519,13 @@ $( "#datepicker" ).datepicker({
 	 firstDay: 1,
 	 currentText: 'Oggi',
 	 buttonImageOnly: true,
+     beforeShowDay: function(ds){
+	  var y = ds.getFullYear(); var m = ds.getMonth()+1; var d = ds.getDate(); 
+	  var dateISO = y + '-' + ('0' + m).slice(-2) + '-' + ('0' + d).slice(-2);
+	  var arrPosition = (window.holiday.findIndex(a => a['date'] == dateISO)).toString();
+	  if (arrPosition != -1) { return [true,'ui-datepicker-holiday',window.sysWeeks[ds.getDay()] + ', Festivo (' + window.holiday[arrPosition].localName + ')']};
+	  return [1,'',window.sysWeeks[ds.getDay()]];
+
 });
 
 
