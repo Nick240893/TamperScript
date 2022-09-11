@@ -385,7 +385,7 @@ text-overflow: ellipsis;
     Tools
 </div>
 
-                <input style='width:10px; height:' type="text" id="datepicker"></input>
+                <input style='width:auto; height:auto' type="text" id="datepicker"></input>
 
 
 
@@ -447,7 +447,7 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     } else {
-        document.querySelector("#datePicker").value = '2022/07/12'
+        document.querySelector("#datePicker").value = '2022-09-18'
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     }
 }
@@ -512,7 +512,7 @@ sysApp.time.datePicker = {
 	 showOtherMonths: false,
 	 selectOtherMonths: true,
 	 showButtonPanel: true,
-	 dateFormat: 'yyyy-mm-dd',
+	 dateFormat: 'yy-mm-dd',
 	 changeMonth: true,
 	 changeYear: true,
 	 monthNamesShort: sysApp.time.months,
