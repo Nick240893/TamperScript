@@ -443,10 +443,10 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
         sysApp.timeFix.now = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
         $("#datepicker").datepicker().datepicker("setDate",sysApp.timeFix.now);
-        
         $('#p2CalTxt').val(sysApp.timeFix.now.toISOString())
-    }
+    } else {
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
+    }
 }
 
 function jsP2ChkTab(el, select, show) {
