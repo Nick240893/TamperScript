@@ -420,10 +420,10 @@ function jsP2Clock() {
     sysApp.time.ww = ww = now.getDay();
     sysApp.time.dd = dd = ('0'+now.getDate()).slice(-2);
     sysApp.time.mh = mh = ('0'+(now.getMonth()+1)).slice(-2);
-    sysApp.time.u yy = ('0'+now.getFullYear()).slice(-2);
-    var hh = ('0'+now.getHours()).slice(-2);
-    var mm = ('0'+now.getMinutes()).slice(-2); 
-    var ss = ('0'+now.getSeconds()).slice(-2);
+    sysApp.time.yy = yy = ('0'+now.getFullYear()).slice(-2);
+    sysApp.time.hh = hh = ('0'+now.getHours()).slice(-2);
+    sysApp.time.mm = mm = ('0'+now.getMinutes()).slice(-2); 
+    sysApp.time.ss = ss = ('0'+now.getSeconds()).slice(-2);
     $('#sysClockText').text(sysApp.time.weeks[ww]+' '+dd+'/'+mh+'/'+yy+' '+hh+':'+mm+':'+ss);
     sysApp.time.nowTimestamp    = Math.round(now.getTime() / 1000);                                       //format 21/09/2022 11:00:00 in Timestamp
     sysApp.time.dateTimestamp   = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0 ) / 1000; //format 21/09/2022 --:--:-- in Timestamp
