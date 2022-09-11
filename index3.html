@@ -536,8 +536,7 @@ $( "#datepicker" ).datepicker({
 	 currentText: 'Oggi',
 	 buttonImageOnly: true,
 	 beforeShowDay: function(ds){
-	  var dateISO = ds.    sysApp.time.ISO= iso= now.toLocaleDateString('en-CA');
-
+	  var dateISO = ds.toLocaleDateString('en-CA');
 	  var arrPosition = (window.holiday.findIndex(a => a['date'] == dateISO)).toString();
 	  if (arrPosition != -1) { return [true,'ui-datepicker-holiday',window.sysWeeks[ds.getDay()] + ', Festivo (' + window.holiday[arrPosition].localName + ')']};
 	  return [1,'',window.sysWeeks[ds.getDay()]];
