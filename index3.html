@@ -443,7 +443,8 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     } else {
-        $("#datepicker").datepicker(sysApp.time.datePicker).datepicker("setDate",now);
+        sysApp.time.datePicker.setDate=now
+        $("#datepicker").datepicker(sysApp.time.datePicker);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     }
 }
