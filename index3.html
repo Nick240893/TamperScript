@@ -441,10 +441,11 @@ function jsP2Clock() {
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>55799) && (sysApp.time.hhmmTimestamp<84600)) ? '3' : sysApp.shift.auto ;
         sysApp.timeFix.now = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
         $("#datepicker").datepicker("setDate",sysApp.timeFix.now);
-        $('#p2CalTxt').val(sysApp.timeFix.now.toISOString())
+        $('#p2CalTxt').text(sysApp.timeFix.now.toISOString())
 
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
     if (sysApp.time.hhmmTimestamp>84599) {
+        $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     } else {
         $("#datepicker").datepicker("setDate",now);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
