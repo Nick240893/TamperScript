@@ -417,10 +417,10 @@ function jsMainOptSwc(el, id, prefix) {
 
 function jsP2Clock() {
     sysApp.time. now= new Date();
-    var ww = now.getDay();
-    var dd = ('0'+now.getDate()).slice(-2);
-    var mh = ('0'+(now.getMonth()+1)).slice(-2);
-    var yy = ('0'+now.getFullYear()).slice(-2);
+    sysApp.time.ww = ww = now.getDay();
+    sysApp.time.dd = dd = ('0'+now.getDate()).slice(-2);
+    sysApp.time.mh = mh = ('0'+(now.getMonth()+1)).slice(-2);
+    sysApp.time.u yy = ('0'+now.getFullYear()).slice(-2);
     var hh = ('0'+now.getHours()).slice(-2);
     var mm = ('0'+now.getMinutes()).slice(-2); 
     var ss = ('0'+now.getSeconds()).slice(-2);
@@ -439,7 +439,7 @@ function jsP2Clock() {
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>27000) && (sysApp.time.hhmmTimestamp<55800)) ? '2' : sysApp.shift.auto ;
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>55799) && (sysApp.time.hhmmTimestamp<84600)) ? '3' : sysApp.shift.auto ;
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
-    
+    sysApp.time.
 }
 
 function jsP2ChkTab(el, select, show) {
