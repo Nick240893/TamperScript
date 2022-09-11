@@ -445,6 +445,7 @@ function jsP2Clock() {
         $("#datepicker").datepicker().datepicker("setDate",sysApp.timeFix.now);
         $('#p2CalTxt').val(sysApp.timeFix.now.toISOString())
     } else {
+        $("#datepicker").datepicker("setDate",now);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     }
 }
