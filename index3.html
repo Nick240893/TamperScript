@@ -443,13 +443,14 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
         sysApp.timeFix.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
         $("#datepicker").val(nw.toLocaleDateString('en-CA'));
-        $('#p2CalTxt').text(nw.toLocaleDateString('it-IT'{year: 'numeric', month: '2-digit', day: '2-digit'} // 08/19/2)
+        $('#p2CalTxt').text(nw.toLocaleDateString('it-IT',{year: 'numeric', month: '2-digit', day: '2-digit'}))
     } else {
         $("#datepicker").val(yy+'-'+mh +'-'+dd);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     }
 }
-new Date().toLocaleDateString('en-US', 
+
+
 
 function jsP2ChkTab(el, select, show) {
     $('.cssChkTab').css('background-image','');
