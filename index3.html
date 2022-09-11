@@ -433,7 +433,7 @@ function jsP2Clock() {
     sysApp.time.mmTimestamp     = Math.round(Number(mm)*60);                                              //format --/--/---- --:00:-- in Timestamp
     sysApp.time.ssTimestamp     = Math.round(Number(ss)+0);                                               //format --/--/---- --:--:00 in Timestamp
     sysApp.time.mmssTimestamp   = Math.round(sysApp.time.mmTimestamp+Number(ss));                                     //format --/--/---- --:00:00 in Timestamp
-    if ((sysApp.firstSessionRun)) {return};
+    if (sysApp.firstSessionRun) {return};
     sysApp.firstSessionRun = 'false';
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp<27000) || (sysApp.time.hhmmTimestamp>84599)) ? '1' : null;
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>27000) && (sysApp.time.hhmmTimestamp<55800)) ? '2' : sysApp.shift.auto ;
