@@ -420,7 +420,7 @@ function jsP2Clock() {
     sysApp.time.ww = ww = now.getDay();
     sysApp.time.dd = dd = ('0'+now.getDate()).slice(-2);
     sysApp.time.mh = mh = ('0'+(now.getMonth()+1)).slice(-2);
-    sysApp.time.yy = yy = ('0'+now.getFullYear()).slice(-2);
+    sysApp.time.yy = yy = now.getFullYear()).slice(-2);
     sysApp.time.hh = hh = ('0'+now.getHours()).slice(-2);
     sysApp.time.mm = mm = ('0'+now.getMinutes()).slice(-2); 
     sysApp.time.ss = ss = ('0'+now.getSeconds()).slice(-2);
@@ -444,10 +444,10 @@ function jsP2Clock() {
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
     if (sysApp.time.hhmmTimestamp>84599) {
         sysApp.timeFix.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
-        sysApp.timeFix.now.dd = ddF = ('0'+nw.getDate()).slice(-2);
+        sysApp.timeFix.now.dd = yyF = ('0'+nw.getDate()).slice(-2);
         sysApp.timeFix.now.dd = mhF = ('0'+nw.getDate()).slice(-2);
         sysApp.timeFix.now.dd = ddF = ('0'+nw.getDate()).slice(-2);
-        $("#datepicker").val(('0'+nw.getDate()).slice(-2);+'-'+('0'+now.getDate()).slice(-2);+'-'+);
+        $("#datepicker").val(yyF+'-'+mhF+'-'+ddF);
         $('#p2CalTxt').text(dd+'/'+mh+'/'+yy)
     } else {
         $("#datepicker").datepicker("setDate",now);
