@@ -443,7 +443,8 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
     }
             sysApp.timeFix.now = new Date (now.getTime()+( 3600 * 1000 * 24))
-        $( "#datepicker" ).datepicker('setDate', sysApp.timeFix.now)
+            $( "#datepicker" ).datepicker('setDate
+        console.log($( "#datepicker" ).datepicker('getDate'))
 
 }
 
