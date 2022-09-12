@@ -278,7 +278,7 @@ text-overflow: ellipsis;
         <span class="cssCalImg">
             <i class="fa fa-calendar" title="Calendario" onclick="$('#datepicker').datepicker('show')"></i>
             <div class="cssCalSel">
-                <input type="text" id="datepicker" onchange="(!(/nan/gi.event.target.value))) ? $('#p2CalTxt').text(new Date(event.target.value).toLocaleDateString('it-IT', sysApp.time.setLocalDate)):null"></input>
+                <input type="text" id="datepicker" onchange="(!(/nan/gi.test(event.target.value))) ? $('#p2CalTxt').text(new Date(event.target.value).toLocaleDateString('it-IT', sysApp.time.setLocalDate)):null"></input>
             </div>
         </span>&nbsp;
         <span class="cssCalTxt">
