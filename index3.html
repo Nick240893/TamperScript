@@ -281,7 +281,7 @@ text-overflow: ellipsis;
         <span class="cssCalImg">
             <i class="fa fa-calendar" title="Calendario" onclick="$('#datepicker').datepicker('show')"></i>
             <div class="cssCalSel">
-                <input type="text" id="datepicker" onchange="jsP2Navigator('change',this,event)"></input>
+                <input type="text" id="datepicker" onchange="jsP2Navigator('change',this,event.target.value)"></input>
             </div>
         </span>&nbsp;
         <span class="cssCalTxt">
@@ -485,7 +485,7 @@ function jsP2ChkTab(el, select, show) {
 
 
 function jsP2Navigator(opt, el, ev) {
-    if(opt == 'change' && ev.target.value.indexOf)
+    if(opt == 'change' && ev.indexOf('NaN')!= -1)
 }
 
 
