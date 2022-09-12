@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ControlM Auto Refresh
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  try to take over the world!
 // @author       NigroN
 // @match        http://cattolica-icinga1/ControlM/*
@@ -16,5 +16,11 @@
         $('button.d-button.d-button_action.d-icon-refresh.ng-scope').click()
         console.log("Ultima Esecuzione: " + ('0' + new Date().getHours()).slice(-2) +":"+ ('0' + new Date().getMinutes()).slice(-2) +":"+ ('0' + new Date().getSeconds()).slice(-2));
     }
-setInterval(reload, Math.round(timer*1000));
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState == "visible") {reload()};
+    })
+
+    setInterval(reload, Math.round(timer*1000));
+
 })();
