@@ -464,9 +464,9 @@ function jsP2Clock() {
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>55799) && (sysApp.time.hhmmTimestamp<84600)) ? '3' : sysApp.shift.auto ;
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
     if (sysApp.time.hhmmTimestamp>84599) {
-        sysApp.timeFix.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
-        sysApp.timeFix.ISO = iso= nw.toLocaleDateString('en-CA');
-        sysApp.timeFix.Ita = ita= nw.toLocaleDateString('it-IT', sysApp.time.timeDataIT);
+        sysApp.time.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
+        sysApp.time.ISO = iso= nw.toLocaleDateString('en-CA');
+        sysApp.time.Ita = ita= nw.toLocaleDateString('it-IT', sysApp.time.timeDataIT);
     }
     $("#datepicker").val(iso);
     $('#p2CalTxt').text(ita);
@@ -485,7 +485,8 @@ function jsP2ChkTab(el, select, show) {
 
 
 function jsP2Navigator(opt, el, ev) {
-    if(opt == 'change' && ev.indexOf('NaN')!= -1)
+    if(opt == 'change' && ev.indexOf('NaN')== -1);
+    
 }
 
 
