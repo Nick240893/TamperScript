@@ -488,7 +488,7 @@ function jsP2Navigator(opt, el, ev) {
     if (opt == 'change' && ev.indexOf('NaN')== -1) {
         $('#p2CalTxt').text(new Date(ev).toLocaleDateString('it-IT', sysApp.time.timeDataIT))
     } else if (opt == 'change' && ev.indexOf('NaN')!= -1) {
-        $('#datepicker').val()
+        $('#datepicker').val(sysApp.time.ISO)
     }
 }
 
