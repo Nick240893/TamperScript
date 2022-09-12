@@ -462,7 +462,7 @@ function jsP2Clock() {
     if (sysApp.time.hhmmTimestamp>84599) {
         sysApp.timeFix.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
         sysApp.timeFix.ISO = iso= nw.toLocaleDateString('en-CA');
-        sysApp.timeFix.Ita = ita= nw.toLocaleDateString('it-IT',)
+        sysApp.timeFix.Ita = ita= nw.toLocaleDateString('it-IT',sysApp.time.setLocal)
     }
     $("#datepicker").val(iso);
     $('#p2CalTxt').text(ita);
@@ -495,6 +495,7 @@ sysApp.time.weeks = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Ve
 sysApp.time.months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'];
 sysApp.time.weeksShort = ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
 sysApp.time.setLocalDate = {year: 'numeric', month: '2-digit', day: '2-digit'};
+sysApp.time.setLocal = {year: 'numeric', month: '2-digit', day: '2-digit', weekday:"long", hour: '2-digit', hour12: false, minute:'2-digit', second:'2-digit'};
 
 
 
@@ -513,7 +514,6 @@ window.onscroll = function() {
 }
 
 
-sysApp.time. {year: 'numeric', month: '2-digit', day: '2-digit', weekday:"long", hour: '2-digit', hour12: false, minute:'2-digit', second:'2-digit'}))
 console.log(new Date().toString());
 console.log(new Date().toLocaleDateString());
 console.log(new Date().toLocaleDateString('en-CA'))
