@@ -231,8 +231,8 @@ text-overflow: ellipsis;
     color: #4caf50 !important;
 }
 
- a.ui-state-highlight {
-    color: white !important;
+.ui-datepicker-calendar a.ui-state-highlight {
+    color
 }
 
 </style>
@@ -463,7 +463,7 @@ function jsMainOptSwc(el, id, prefix) {
 }
 
 function jsP2Clock() {
-    sysApp.time.now= now= new Date();
+    sysApp.time.now= now= new Date(2022,11,25,0,0,0);
     sysApp.time.ww = ww = now.getDay();
     sysApp.time.dd = dd = ('0'+now.getDate()).slice(-2);
     sysApp.time.mh = mh = ('0'+(now.getMonth()+1)).slice(-2);
@@ -498,7 +498,7 @@ function jsP2Clock() {
     sysApp.page2.datePicker.selectITA = ita
     $("#datepicker").val(iso);
     $('#p2CalTxt').text(ita);
-    //jsP2Navigator()
+    console.log(sysApp.time.holiday)
 }
 
 
@@ -543,9 +543,8 @@ function jsP2Navigator(opt, el, ev) {
 }
 
 
-
-
 var sysApp={};
+(async function() {
 sysApp.time={};
 sysApp.timeFix={};
 sysApp.holiday={};
@@ -557,7 +556,7 @@ sysApp.time.weeksShort = ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
 sysApp.time.timeDataIT = {year: 'numeric', month: '2-digit', day: '2-digit'}
 sysApp.time.timeAllIT = {year: 'numeric', month: '2-digit', day: '2-digit', weekday:"long", hour: '2-digit', hour12: false, minute:'2-digit', second:'2-digit'}
 sysApp.page2.datePicker={};
-getHoliday()
+await getHoliday()
 $("#p2CalSlc").selectmenu({width:'auto'});
 sysApp.page2.setInterval = setInterval(jsP2Clock,500);
 $('#p2ChkTabDefault').click();
@@ -599,7 +598,7 @@ $( "#datepicker" ).datepicker({
 });
 jsP2Clock();
 
-
+})()
 
 
 
