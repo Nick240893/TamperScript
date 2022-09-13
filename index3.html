@@ -468,6 +468,7 @@ function jsP2Clock() {
         sysApp.time.ISO = iso= nw.toLocaleDateString('en-CA');
         sysApp.time.Ita = ita= nw.toLocaleDateString('it-IT', sysApp.time.timeDataIT);
     }
+    
     $("#datepicker").val(iso);
     $('#p2CalTxt').text(ita);
 }
@@ -509,7 +510,7 @@ sysApp.time.months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugn
 sysApp.time.weeksShort = ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
 sysApp.time.timeDataIT = {year: 'numeric', month: '2-digit', day: '2-digit'}
 sysApp.time.timeAllIT = {year: 'numeric', month: '2-digit', day: '2-digit', weekday:"long", hour: '2-digit', hour12: false, minute:'2-digit', second:'2-digit'}
-
+sysApp.page2.datePicker={};
 
 $("#p2CalSlc").selectmenu({width:'auto'});
 jsP2Clock();
