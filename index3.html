@@ -541,6 +541,7 @@ function jsP2Navigator(opt, el, ev) {
         $('#p2CalTxt').css({'color':''})
     } else {
         $('#p2CalTxt').css({'color':'red'})
+        $('#p2CalTxt').attr('title', sysApp.time.holiday[arrPosition].localName)
     }
 }
 
