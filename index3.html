@@ -528,11 +528,11 @@ function jsP2Navigator(opt, el, ev) {
         $('#datepicker').val(sysApp.page2.datePicker.selectISO);
         $('#p2CalTxt').text(sysApp.page2.datePicker.selectITA);
     }
-    var arrPosition = (sysApp.time.holiday.findIndex(a => a['date'] == sysApp.page2.datePicker.selectISO).toString();
+    var arrPosition = (sysApp.time.holiday.findIndex(a => a['date'] == sysApp.page2.datePicker.selectISO)).toString()
     if (arrPosition == -1) {
-        $('#p2CalTxt').css{'color':'red'}
+        $('#p2CalTxt').css({'color':'red'})
     } else {
-        $('#p2CalTxt').css{'color':''}
+        $('#p2CalTxt').css({'color':''})
     }
 }
 
