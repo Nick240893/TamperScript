@@ -447,7 +447,7 @@ function jsP2Clock() {
     sysApp.time.ss = ss = ('0'+now.getSeconds()).slice(-2);
     sysApp.time.wk = wk = sysApp.time.weeks[ww];
     sysApp.time.ISO= iso= now.toLocaleDateString('en-CA');
-    sysApp.time.Ita= ita= now.toLocaleDateString('it-IT',{year: 'numeric', month: '2-digit', day: '2-digit'});
+    sysApp.time.Ita= ita= now.toLocaleDateString('it-IT',sysApp.time.timeDataIT);
     $('#sysClockText').text(wk+' '+ita+' '+hh+':'+mm+':'+ss);
     sysApp.time.nowTimestamp    = Math.round(now.getTime() / 1000);                                       //format 21/09/2022 11:00:00 in Timestamp
     sysApp.time.dateTimestamp   = new Date(now.getFullYear(),now.getMonth(),now.getDate(),0,0,0 ) / 1000; //format 21/09/2022 --:--:-- in Timestamp
