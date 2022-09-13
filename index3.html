@@ -578,7 +578,7 @@ $( "#datepicker" ).datepicker({
 	 nextText: "Avanti",
 	 showWeek: false,
 	 firstDay: 1,
-	 yearRange: new Date().getFullYear()+':'+Math.round(),
+	 yearRange: new Date().getFullYear()+':'+Math.round(new Date().getFullYear()+1),
 	 currentText: 'Oggi',
 	 buttonImageOnly: true,
 	 beforeShowDay: function(ds){
