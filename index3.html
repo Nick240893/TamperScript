@@ -561,8 +561,6 @@ sysApp.page2.datePicker={};
 await getHoliday()
 $("#p2CalSlc").selectmenu({width:'auto'});
 sysApp.page2.setInterval = setInterval(jsP2Clock,500);
-jsP2Clock();
-})()
 $('#p2ChkTabDefault').click();
 $('#sysMainTabDefalt').click();
 window.onscroll = function() {
@@ -601,7 +599,7 @@ $( "#datepicker" ).datepicker({
 	 }
 });
 
-
+jsP2Clock();
 
 
 
@@ -644,7 +642,7 @@ $( "#datepicker" ).datepicker({
 
 
 $(window).tooltip();
-
+})()
 
 </script>
 
