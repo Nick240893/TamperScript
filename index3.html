@@ -512,7 +512,6 @@ function jsP2Navigator(opt, el, ev) {
         sysApp.page2.datePicker.selectITA = new Date(ev).toLocaleDateString('it-IT', sysApp.time.timeDataIT);
         sysApp.page2.datePicker.selectISO = ev;
         $('#p2CalTxt').text(sysApp.page2.datePicker.selectITA);
-        return;
     } else if (opt == 'change'&& el && ev.indexOf('NaN')!= -1) {
         $('#datepicker').val(sysApp.page2.datePicker.selectISO);
         return;
@@ -529,6 +528,8 @@ function jsP2Navigator(opt, el, ev) {
         $('#datepicker').val(sysApp.page2.datePicker.selectISO);
         $('#p2CalTxt').text(sysApp.page2.datePicker.selectITA);
     }
+    var arrPosition = (sysApp.time.holiday.findIndex(a => a['date'] == ds.toLocaleDateString('en-CA'))).toString();
+	  if (arrPosition == -1) {
 }
 
 
