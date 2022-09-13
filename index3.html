@@ -436,7 +436,7 @@ function ajax(type,link,data,header) {
 async function getHoliday() {
     var holy1 = await ajax('get','https://checkapp2.pages.dev/Dipendenze/Holidays/'+new Date().getFullYear()+'.json')
     var holy2 = await ajax('get','https://checkapp2.pages.dev/Dipendenze/Holidays/'+(new Date().getFullYear()+1)+'.json')
-    sysApp.time.holiday=
+    sysApp.time.holiday= holy2.concat(holy2);
 }
 
 function jsMainTabSwc(el, className, page) {
@@ -533,7 +533,6 @@ function jsP2Navigator(opt, el, ev) {
 
 
 var sysApp={};
-(async function(){
 sysApp.time={};
 sysApp.timeFix={};
 sysApp.holiday={};
@@ -545,8 +544,7 @@ sysApp.time.weeksShort = ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
 sysApp.time.timeDataIT = {year: 'numeric', month: '2-digit', day: '2-digit'}
 sysApp.time.timeAllIT = {year: 'numeric', month: '2-digit', day: '2-digit', weekday:"long", hour: '2-digit', hour12: false, minute:'2-digit', second:'2-digit'}
 sysApp.page2.datePicker={};
-sysApp.time.holiday= await ajax('get','https://date.nager.at/api/v3/publicholidays/2022/IT')
-})()
+getHoliday()
 
 $("#p2CalSlc").selectmenu({width:'auto'});
 jsP2Clock();
