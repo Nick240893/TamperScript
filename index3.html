@@ -215,7 +215,21 @@ overflow: hidden;
 text-overflow: ellipsis;
 }
 /*-----------------------------------------------------------*/
-
+.ui-datepicker-holiday {
+    background-color: red !important;
+}
+    
+.ui-datepicker-holiday a {
+    color: red !important;
+}
+    
+.ui-datepicker-week-end a {
+    color: #4caf50 !important;
+}
+    
+.ui-datepicker-week-end {
+    color: #4caf50 !important;
+}
 </style>
 <body>
 <button class="cssButtonToTop ui-front" style="display:none" onclick="$(window).scrollTop(0)">Top</button>
@@ -570,7 +584,7 @@ $( "#datepicker" ).datepicker({
 	  var dateISO = ds.toLocaleDateString('en-CA');
 	  var arrPosition = (sysApp.time.holiday.findIndex(a => a['date'] == dateISO)).toString();
 	  if (arrPosition == -1) {return [1,'',sysApp.time.weeks[ds.getDay()]]}
-      return [true,'ui-datepicker-holiday',window.sysWeeks[ds.getDay()] + ', Festivo (' + sysApp.time.holiday[arrPosition].localName + ')']
+      return [true,'ui-datepicker-holiday',sysApp.time.weeks[ds.getDay()] + ', Festivo (' + sysApp.time.holiday[arrPosition].localName + ')']
 	 }
 });
 
