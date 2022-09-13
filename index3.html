@@ -568,8 +568,8 @@ $( "#datepicker" ).datepicker({
 	 beforeShowDay: function(ds){
 	  var dateISO = ds.toLocaleDateString('en-CA');
 	  var arrPosition = (sysApp.time.holiday.findIndex(a => a['date'] == dateISO)).toString();
-	  if (arrPosition != -1) { return [true,'ui-datepicker-holiday',window.sysWeeks[ds.getDay()] + ', Festivo (' + window.holiday[arrPosition].localName + ')']};
-	  return [1,'',window.sysWeeks[ds.getDay()]];
+	  if (arrPosition != -1) { return [true,'ui-datepicker-holiday',window.sysWeeks[ds.getDay()] + ', Festivo (' + sysApp.time.holiday[arrPosition].localName + ')']};
+	  return [1,'',sysApp.time.weeks[ds.getDay()]];
 	 }
 });
 
