@@ -559,6 +559,7 @@ sysApp.time.timeDataIT = {year: 'numeric', month: '2-digit', day: '2-digit'}
 sysApp.time.timeAllIT = {year: 'numeric', month: '2-digit', day: '2-digit', weekday:"long", hour: '2-digit', hour12: false, minute:'2-digit', second:'2-digit'}
 sysApp.page2.datePicker={};
 await getHoliday()
+jsP2Clock();
 $("#p2CalSlc").selectmenu({width:'auto'});
 sysApp.page2.setInterval = setInterval(jsP2Clock,500);
 $('#p2ChkTabDefault').click();
@@ -570,6 +571,7 @@ window.onscroll = function() {
         $('.cssButtonToTop').css('display','none')
     }
 }
+})()
 $( "#datepicker" ).datepicker({
 	 showButtonPanel: true,
 	 showOtherMonths: false,
@@ -598,9 +600,9 @@ $( "#datepicker" ).datepicker({
       return [true,'ui-datepicker-holiday',sysApp.time.weeks[ds.getDay()] + ', Festivo (' + sysApp.time.holiday[arrPosition].localName + ')']
 	 }
 });
-jsP2Clock();
 
-})()
+
+
 
 
 
