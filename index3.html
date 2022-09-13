@@ -493,6 +493,7 @@ function jsP2Clock() {
     sysApp.page2.datePicker.selectITA = ita
     $("#datepicker").val(iso);
     $('#p2CalTxt').text(ita);
+    jsP2Navigator()
 }
 
 
@@ -530,9 +531,9 @@ function jsP2Navigator(opt, el, ev) {
     }
     var arrPosition = (sysApp.time.holiday.findIndex(a => a['date'] == sysApp.page2.datePicker.selectISO)).toString()
     if (arrPosition == -1) {
-        $('#p2CalTxt').css({'color':'red'})
-    } else {
         $('#p2CalTxt').css({'color':''})
+    } else {
+        $('#p2CalTxt').css({'color':'red'})
     }
 }
 
