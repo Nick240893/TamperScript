@@ -523,10 +523,12 @@ function jsP2Navigator(opt, el, ev) {
     if (opt == 'bck') {
         var date = new Date(new Date(sysApp.page2.datePicker.selectISO).getTime()-(3600*1000*24));
     }
-    sysApp.page2.datePicker.selectISO = date.toLocaleDateString('en-CA');
-    sysApp.page2.datePicker.selectITA = date.toLocaleDateString('it-IT', sysApp.time.timeDataIT);
-    $('#datepicker').val(sysApp.page2.datePicker.selectISO);
-    $('#p2CalTxt').text(sysApp.page2.datePicker.selectITA);
+    if (opt == 'bck'||opt == 'frw') {
+        sysApp.page2.datePicker.selectISO = date.toLocaleDateString('en-CA');
+        sysApp.page2.datePicker.selectITA = date.toLocaleDateString('it-IT', sysApp.time.timeDataIT);
+        $('#datepicker').val(sysApp.page2.datePicker.selectISO);
+        $('#p2CalTxt').text(sysApp.page2.datePicker.selectITA);
+    }
 }
 
 
