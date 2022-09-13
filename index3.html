@@ -436,7 +436,7 @@ function ajax(type,link,data,header) {
 async function getHoliday() {
     var holy1 = await ajax('get','https://checkapp2.pages.dev/Dipendenze/Holidays/'+new Date().getFullYear()+'.json')
     var holy2 = await ajax('get','https://checkapp2.pages.dev/Dipendenze/Holidays/'+(new Date().getFullYear()+1)+'.json')
-    sysApp.time.holiday= holy2.concat(holy2);
+    sysApp.time.holiday= [...holy1,...holy2]
 }
 
 function jsMainTabSwc(el, className, page) {
