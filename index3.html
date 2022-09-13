@@ -491,17 +491,21 @@ function jsP2Navigator(opt, el, ev) {
         sysApp.page2.datePicker.selectITA = new Date(ev).toLocaleDateString('it-IT', sysApp.time.timeDataIT);
         sysApp.page2.datePicker.selectISO = ev;
         $('#p2CalTxt').text(sysApp.page2.datePicker.selectITA);
+        return;
     } else if (opt == 'change'&& el && ev.indexOf('NaN')!= -1) {
         $('#datepicker').val(sysApp.page2.datePicker.selectISO);
-        return
+        return;
     }
     if (opt == 'frw') {
         var date = new Date(new Date(sysApp.page2.datePicker.selectISO).getTime()+(3600*1000*24));
-        sysApp.page2.datePicker.selectISO = date.toLocaleDateString('en-CA');
+    }
+    if (opt == 'frw') {
+        var date = new Date(new Date(sysApp.page2.datePicker.selectISO).getTime()+(3600*1000*24));
+    }
+    sysApp.page2.datePicker.selectISO = date.toLocaleDateString('en-CA');
         sysApp.page2.datePicker.selectITA = date.toLocaleDateString('it-IT', sysApp.time.timeDataIT);
         $('#datepicker').val(sysApp.page2.datePicker.selectISO);
         $('#p2CalTxt').text(sysApp.page2.datePicker.selectITA);
-    }
 }
 
 
