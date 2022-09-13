@@ -434,7 +434,7 @@ function ajax(type,link,data,header) {
 };
 
 async function getHoliday() {
-    var holy1 = await ajax('get')
+    var holy1 = await ajax('get','https://checkapp2.pages.dev/Dipendenze/Holidays/'+new Date().getFullYear()+'.json')
 }
 
 function jsMainTabSwc(el, className, page) {
