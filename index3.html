@@ -523,8 +523,9 @@ sysApp.time.weeksShort = ['Dom','Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab'];
 sysApp.time.timeDataIT = {year: 'numeric', month: '2-digit', day: '2-digit'}
 sysApp.time.timeAllIT = {year: 'numeric', month: '2-digit', day: '2-digit', weekday:"long", hour: '2-digit', hour12: false, minute:'2-digit', second:'2-digit'}
 sysApp.page2.datePicker={};
-async function()
+(async function(){
 sysApp.time.holiday= await ajax('get','https://date.nager.at/api/v3/publicholidays/2022/IT')
+})()
 
 $("#p2CalSlc").selectmenu({width:'auto'});
 jsP2Clock();
