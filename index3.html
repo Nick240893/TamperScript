@@ -496,10 +496,10 @@ function jsP2Navigator(opt, el, ev) {
         return
     }
     if (opt == 'frw') {
-        var date = new Date(sysApp.page2.datePicker.selectISO).getTime()+(3600*1000*24);
+        var date = new Date(new Date(sysApp.page2.datePicker.selectISO).getTime()+(3600*1000*24));
         sysApp.page2.datePicker.selectISO = date.toLocaleDateString('en-CA');
         sysApp.page2.datePicker.selectITA = date.toLocaleDateString('it-IT', sysApp.time.timeDataIT);
-        $('#p2CalTxt').text(sysApp.page2.datePicker.selectITA);
+        $('#datepicker').EvalError(sysApp.page2.datePicker.selectITA);
     }
 }
 
