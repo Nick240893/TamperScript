@@ -84,7 +84,6 @@ body{user-select:none}
 
 
 /*-----------------------------------------------------------*/
-
 .cssCalCont {
     display: flex;
     border-right: 4px solid #191970;
@@ -466,6 +465,9 @@ function jsMainOptSwc(el, id, prefix) {
 
 function jsP2Clock() {
     sysApp.time.now= now= new Date(2022,11,25,0,0,0);
+    
+    
+    
     sysApp.time.ww = ww = now.getDay();
     sysApp.time.dd = dd = ('0'+now.getDate()).slice(-2);
     sysApp.time.mh = mh = ('0'+(now.getMonth()+1)).slice(-2);
@@ -491,16 +493,18 @@ function jsP2Clock() {
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>27000) && (sysApp.time.hhmmTimestamp<55800)) ? '2' : sysApp.shift.auto ;
     sysApp.shift.auto = ((sysApp.time.hhmmTimestamp>55799) && (sysApp.time.hhmmTimestamp<84600)) ? '3' : sysApp.shift.auto ;
     $('#p2CalSlc').val(sysApp.shift.auto).selectmenu("refresh");
+    sysApp.timeFix.now = now;
     if (sysApp.time.hhmmTimestamp>84599) {
-        sysApp.time.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
-        sysApp.time.ISO = iso= nw.toLocaleDateString('en-CA');
-        sysApp.time.Ita = ita= nw.toLocaleDateString('it-IT', sysApp.time.timeDataIT);
+        sysApp.timeFix.now = nw = new Date (now.getTime()-(sysApp.time.hhmmssTimestamp)+(3600*1000*24));
+        sysApp.timeFix.ISO = iso= nw.toLocaleDateString('en-CA');
+        sysApp.timeFix.Ita = ita= nw.toLocaleDateString('it-IT', sysApp.time.timeDataIT);
     }
     sysApp.page2.datePicker.selectISO = iso
     sysApp.page2.datePicker.selectITA = ita
     $("#datepicker").val(iso);
     $('#p2CalTxt').text(ita);
     jsP2Navigator();
+    console.log(now.toLocaleString('it-IT',sysApp.time.timeAllIT).charAt(0).toUpperCase())
 }
 
 
@@ -537,11 +541,12 @@ function jsP2Navigator(opt, el, ev) {
         $('#p2CalTxt').text(sysApp.page2.datePicker.selectITA);
     }
     var arrPosition = (sysApp.time.holiday.findIndex(a => a['date'] == sysApp.page2.datePicker.selectISO)).toString()
+    var wk = sysApp.time.weeks[sysApp.timeFix.now.getDay()];
     if (arrPosition == -1) {
         $('#p2CalTxt').css({'color':''})
     } else {
         $('#p2CalTxt').css({'color':'red'})
-        $('#p2CalTxt').attr('title', sysApp.time.holiday[arrPosition].localName)
+        $('#p2CalTxt').attr('title', wk +', '+ sysApp.time.holiday[arrPosition].localName)
     }
 }
 
