@@ -610,40 +610,6 @@ jsP2Clock();
 
 
 
-     var width=Math.max.apply(null, $(".sizeFixClock").map(function(){ return parseInt($(this).width()) }).get());
-     $('.cssChkLstTblClk').css({'width': width})
-     console.log(width)
-     var width=Math.max.apply(null, $(".sizeFixOpt").map(function(){ return parseInt($(this).width()) }).get());
-     $('.cssChkLstTblOpt').css({'width': width})
-     console.log(width)
-     
-     var sizeFixChk = Math.max.apply(null, $(".sizeFixCheck").map(function(){ return parseInt($(this).width()) }).get());
-     var sizeFixLnk = Math.max.apply(null, $(".sizeFixLink").map(function(){ return parseInt($(this).width()) }).get());
-     var sizeControl= Math.max.apply(null, $(".cssChkLstTblNam").map(function(){ return parseInt($(this).width()) }).get());
-     var sizeContro2= Math.round((sizeControl+1)*2);
-     
-     if ((sizeFixLnk+sizeFixChk)<(sizeContro2+1)) {
-         $('.cssChkLstTblNam').css({'width': sizeFixChk+1});
-         console.log('minore');
-     };
-     
-     if ((sizeFixLnk+sizeFixChk)>(sizeContro2)) {
-         if ((sizeFixChk>sizeControl) && (sizeFixLnk>sizeControl)) {
-             $('.cssChkLstTblNam').css({'width': ''});
-             $('.cssChkLstTblLnk').css({'width': ''});
-             console.log('maggiore 1');
-         } else if ((sizeFixChk>sizeControl) && (sizeFixLnk<(sizeControl-(sizeControl/4)) )) {
-             $('.cssChkLstTblLnk').css({'width': sizeFixLnk+1});
-             console.log('maggiore 2');
-         } else if ((sizeFixLnk>sizeControl) && (sizeFixChk>sizeControl )) {
-             $('.cssChkLstTblNam').css({'width': sizeFixChk+1});
-             console.log('maggiore 3');
-         } else {
-             $('.cssChkLstTblNam').css({'width': ''});
-             $('.cssChkLstTblLnk').css({'width': ''});
-             console.log('maggiore 4');
-         }
-     }
 
 
 $(window).tooltip();
