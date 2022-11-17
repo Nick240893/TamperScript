@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         FixSplunk
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  try to take over the world!
 // @author       NigroN
 // @include      https://mooneycloud.splunkcloud.com/it-IT/app/cr_event_management/console_events*
+// @include      https://mooneycloud.splunkcloud.com/en-US/app/cr_event_management/console_events*
 // @require      https://checkapp2.pages.dev/Dipendenze/jQueryUI-Cupertino/external/jquery/jquery.js
 // @grant        none
 // ==/UserScript==
