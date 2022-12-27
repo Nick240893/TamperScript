@@ -5,6 +5,7 @@
 // @description  try to take over the world!
 // @author       NigroN
 // @grant        GM_cookie
+// @require      https://checkapp2.pages.dev/Dipendenze/jQueryUI-Cupertino/external/jquery/jquery.js
 // ==/UserScript==
 
 function cookieAcc() {
