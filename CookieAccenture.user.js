@@ -2,6 +2,8 @@
 // @name         Cookie_Edit
 // @version      0.1
 // @include      https://nos.it.accenture.com/
+// @description  try to take over the world!
+// @author       NigroN
 // @grant        GM_cookie
 // ==/UserScript==
 
