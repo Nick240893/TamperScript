@@ -15,7 +15,8 @@ function cookieAcc() {
             GM_cookie('delete',cookies[0]);
             cookies[0].sameSite = "no_restriction";
             GM_cookie('set',cookies[0]);
-            unsafeWindow.editCookies="yes"+;
+            unsafeWindow.editCookies="yes: "+('0' + new Date().getHours()).slice(-2)+":"+('0' + new Date().getMinutes()).slice(-2))+":"+('0' + new Date().getSeconds()).slice(-2);
+            cons
         }
         unsafeWindow.cookies=cookies;
     });
