@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 function cookieAcc() {
-    GM_cookie('list', { name: "io_chs_italy_sso" }, (cookies) => {
+    GM_cookie('list',{name:"io_chs_italy_sso"},(cookies) => {
         unsafeWindow.editCookies="no";
         if (cookies[0].sameSite != "no_restriction") {
             GM_cookie('delete',cookies[0]);
