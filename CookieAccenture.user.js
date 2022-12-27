@@ -16,7 +16,6 @@ function cookieAcc() {
             cookies[0].sameSite = "no_restriction";
             GM_cookie('set',cookies[0]);
             unsafeWindow.editCookies="yes";
-            cookieAcc();
         }
         unsafeWindow.cookies=cookies;
     });
