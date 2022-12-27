@@ -7,6 +7,7 @@
 
 function cookieList() {
 GM_cookie('list', { name: "io_chs_italy_sso" }, (cookies) => {
+    cookies[0].
 	console.log("testo1");
 	console.log(JSON.stringify(cookies));
     unsafeWindow.cookies=cookies;
