@@ -15,13 +15,12 @@ function cookieAcc() {
             GM_cookie('delete',cookies[0]);
             cookies[0].sameSite = "no_restriction";
             GM_cookie('set',cookies[0]);
-            unsafeWindow.editCookies="yes";
+            unsafeWindow.editCookies="yes"+;
         }
         unsafeWindow.cookies=cookies;
     });
 }
 unsafeWindow.cookieAcc=cookieAcc;
 cookieAcc();
-
 
 
