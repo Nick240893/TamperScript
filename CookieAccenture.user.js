@@ -5,7 +5,7 @@
 // @grant        GM_cookie
 // ==/UserScript==
 
-function cookieList() {
+function cookieAcc() {
     GM_cookie('list', { name: "io_chs_italy_sso" }, (cookies) => {
         unsafeWindow.editCookies="no"
         if (cookies[0].sameSite != "no_restriction") {
@@ -17,8 +17,8 @@ function cookieList() {
         unsafeWindow.cookies=cookies;
     });
 }
-unsafeWindow.cookieList=cookieList;
-cookieList();
+unsafeWindow.cookieAcc=cookieAcc;
+cookieAcc();
 
 
 
