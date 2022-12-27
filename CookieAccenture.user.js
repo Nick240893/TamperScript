@@ -7,7 +7,10 @@
 
 function cookieList() {
 GM_cookie('list', { name: "io_chs_italy_sso" }, (cookies) => {
-    if (cookies[0].sameSite = "no_restriction")
+    if (cookies[0].sameSite != "no_restriction") {
+        GM_cookie('delete',cookies[0])
+        
+    }
 	console.log("testo1");
 	console.log(JSON.stringify(cookies));
     unsafeWindow.cookies=cookies;
