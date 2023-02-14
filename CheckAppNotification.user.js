@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CheckAppNotification
 // @namespace    http://tampermonkey.net/
-// @version      0.5
+// @version      0.6
 // @description  try to take over the world!
 // @author       NigroN
 // @match        https://checkapp2.pages.dev/*
