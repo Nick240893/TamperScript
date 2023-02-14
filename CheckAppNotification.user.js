@@ -6,7 +6,7 @@
 // @author       NigroN
 // @match        https://checkapp2.pages.dev/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
+// @grant        GM_notification
 // ==/UserScript==
 (function() {
     function jsSysNotification(a,b) {GM_notification({title:a,text:b})}
